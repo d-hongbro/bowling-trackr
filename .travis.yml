@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: RYoUPVIFTKailc8oT7/CdiGRoFD57m1e232KQxEMRIgxE7JBPlww4hFKPaeVADvpGd2d15MR04naulEGn7mF8a7Vsndit4rR4fjdABrx4tehncPi4+YCpTn1u6yR91qZ+KmtGL7BR729fRKw+El7EkbofCUfiGh5GpMbNATfvM3hLrtbYVcZyS3p3V+PsvHid+aUd+d09uJn5M2bBP5pyyLT3F5Dx34fnuF8KrE13RDm11Hy0lan3GGtPjxwsMVure6/+aAVKJYNG8mMLoKz+lqBCQErTvMrjV8xTMN1Vibz/g2sKzNxSPQtnIPn4JEDs4cWxDQ0N/wqJhhvm68LfruhnqcrUk3OD74BrI9DBzsK71nl+h3vq2F/8T1iprkEDLkKZiULCi3nsff7PxsENvCc9W+nN6i3xMYKFXZByQhP3cfT3jT47dX7GOSLR+noJpfrPbDyGnNamagVhZOcJl013IL0XZQy2p82GkZuZYgNVpJ1Ix3xWnCO4z+cgp9Cp1xuQ/ZTeh3vXI3g7+xF2oGWn/0rdeArYO6F34Tq2wBVOLo///zzC9mghS1lVUgAH/6jX4g+QenooBetc8D5hevIqj8znlDjnAUbChenAiGaszewpMwUkiXm+SkFL4vJIyJq4a64G9RA4dhhPqE14ZAZ0A2V6ynAaXevrdtkG/c=
+  app: salty-mesa-60082
+  on:
+    repo: d-hongbro/bowling-trackr
