@@ -1,0 +1,23 @@
+{
+  "name": "bowling-trackr",
+  "version": "0.1.0",
+  "description": "Application that allows user to to track their bowling league or game scores and keep track of statistics including pin conversions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-hongbro/bowling-trackr.git"
+  },
+  "author": "d-hongbro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d-hongbro/bowling-trackr/issues"
+  },
+  "homepage": "https://github.com/d-hongbro/bowling-trackr#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
