@@ -18,15 +18,15 @@
   },
   "homepage": "https://github.com/d-hongbro/bowling-trackr#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "mongoose": "^4.13.1",
-    "morgan": "^1.9.0"
+    "body-parser": "^1.15.2",
+    "express": "^4.12.4",
+    "mongoose": "^4.7.1",
+    "morgan": "^1.7.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
+    "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "faker": "^4.1.0",
-    "mocha": "^4.0.1"
+    "faker": "^3.1.0",
+    "mocha": "^3.2.0"
   }
 }
