@@ -18,9 +18,10 @@ app.get('/favicon.ico', function(req, res) {
     res.status(204);
 });
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public', 'index.html'));
-});
+// app.get('/', function(req, res) {
+//   res.status(200);
+//   res.sendFile(path.join(__dirname, '../public', 'index.html'));
+// });
 
 let server;
 
