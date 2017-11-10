@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const path = require('path');
 const app = express();
 
 const {DATABASE_URL, PORT} = require('./config');
@@ -17,6 +18,9 @@ app.get('/favicon.ico', function(req, res) {
     res.status(204);
 });
 
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+});
 
 let server;
 
