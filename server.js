@@ -12,6 +12,12 @@ app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
 
+// Bypass favicon rendering for now
+app.get('/favicon.ico', function(req, res) {
+    res.status(204);
+});
+
+
 let server;
 
 // this function connects to our database, then starts the server
