@@ -1,3 +1,5 @@
+
+// optional: shorten 1st 2nd 
 let MOCK_GAME_LIST = {
 	"gameList": [
 		{
@@ -71,7 +73,7 @@ let MOCK_GAME_LIST = {
 				"secondTryPins":[2, 4, 10],
 				"secondTryScore": 3,
 				"thirdTryPins": [],
-				"thirdTryScore": 0 ,
+				"thirdTryScore": 0,
 				"finalScore": 60
 			},
 			"score": 60,
@@ -142,16 +144,19 @@ let MOCK_GAME_LIST = {
 				"firstTryScore": 3,
 				"secondTryPins":[],
 				"secondTryScore": 3,
-				"finalScore": 54
+				"finalScore": 54,
+				"strike": 0,
+				"spare": 0
 			},
 			"frame10": {
 				"firstTryPins": [],
 				"firstTryScore": 3,
 				"secondTryPins":[],
-				"secondTryScore": '/',
+				"secondTryScore": 7, // / is a representation not a data.
 				"thirdTryPins": [],
-				"thirdTryScore": 'X' ,
+				"thirdTryScore": 10 , // 10
 				"finalScore": 74
+				"strike": 1
 			},
 			"score": 74,
 			"strikeTotal": 1,
@@ -160,6 +165,9 @@ let MOCK_GAME_LIST = {
 		}
 	]
 };
+
+// handle double clicks for buttons within the same function
+
 
 function getRecentGameList(callback) {
 	setTimeout(function() {

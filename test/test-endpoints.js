@@ -22,9 +22,10 @@ describe('Bowling Trackr API Resource', function() {
 	describe('GET Public index endpoint', function() {
 		it('should return 200 along with index.html', function() {
 			return chai.request(app)
-				.get('')
+				.get('/')
 				.then(function(res) {
 					res.should.have.status(200);
+					res.body.should.not.be.empty();
 				});
 		});
 	});

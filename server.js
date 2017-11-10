@@ -18,14 +18,23 @@ app.get('/favicon.ico', function(req, res) {
     res.status(204);
 });
 
-app.get('/list/game', function(req, res) {
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/html', 'index.html'));
   res.status(200);
-  res.sendFile(path.join(__dirname, '/public', 'gameList.html'));
+});
+
+app.get('/list/game', function(req, res) {
+  res.sendFile(path.join(__dirname, '/public/html', 'gameList.html'));
+  // check if the sendfile works
+  res.status(200);
 });
 
 app.get('/game/:id', function(req, res) {
-  res.status(200);
+  // create function to get the game id and merge into the template html and send the content back
   res.sendFile(path.join(__dirname, '/public', 'game.html'));
+  // req.params.id
+  // check if the sendfile works
+  res.status(200);
 });
 
 // app.get('/', function(req, res) {
