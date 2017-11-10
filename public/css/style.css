@@ -1,0 +1,163 @@
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+#navBar {
+ 	overflow: hidden;
+  background-color: #333;
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+}
+
+#navBar ul {
+  margin: 1.3em auto;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#navBar li {
+	display: inline-block;
+	padding: 0em 2em;
+}
+
+header {
+	text-align: center;
+	padding-top: 3.8em;
+	margin: 0 auto;
+}
+
+main {
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	top: 3.8em;
+}
+
+#gameResult {
+	margin: 0 auto;
+}
+
+table {
+	margin: 0 auto;
+}
+
+span {
+	padding: 5px;
+	text-align: right;
+}
+
+th {
+	border-right: 1px solid black;
+}
+
+td {
+	padding: 5px;
+	text-align: right;
+	border-right: 1px solid black;
+}
+
+tr {
+	border-bottom: 1px solid black;
+}
+
+table {
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+#sidebar {
+	position: fixed;
+	top: 3.8em;
+}
+
+#sidebar .fixed {
+  position: fixed;
+  top: 0;
+}
+
+#sidebar .bottom {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+}
+
+#sidebar .menu {
+  list-style-type: none;
+  margin: 0;
+}
+
+#sidebar .menu-item {
+	position: relative;
+	margin: 1em 0;
+}
+
+#sidebar .menu-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background-color: #5dbaff;
+  transition: width .3s ease-out;
+  border-left: 1px solid #5dbaff;
+}
+
+#sidebar .menu-item:hover:before {
+	width: 100%;
+}
+
+#sidebar .menu-item a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 1em 3em;
+  text-align: left;
+}
+
+#sidebar .menu-item span {
+	text-decoration: none;
+	display: inline-block;
+	position: relative;
+}
+
+.gameCard {
+	border: 1px solid #c1c1c1;
+	margin-bottom: 1em;
+}
+
+.gameCard .gameTitle {
+	border-bottom: 1px solid black;
+	background: #c1c1c1;
+}
+
+.gameCard .gameTitle h3 {
+	margin: 0;
+	text-align: left;
+	padding-left: 1em;
+}
+
+.gameStats li {
+	text-align: left;
+	display: inline-block;
+}
+
+.gameStats ul {
+	display: inline-flex;
+	justify-content: space-between;
+	list-style-type: none;
+	width: 100%;
+	padding: 0;
+}
+
+.gameBody {
+	padding: 1em 1em;
+}
+
+.gameBody table {
+	width: 100%;
+}

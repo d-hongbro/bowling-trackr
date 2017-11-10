@@ -174,9 +174,17 @@ function renderSpareStrikes(userInput) {
 function gameHTMLCard(game) {
 	let html = `<div class="gameCard">
 					<div class="gameTitle">
-						<h3>${game.id}</h3>
+						<h3>Game ${game.id}</h3>
 					</div>
 					<div class="gameBody">
+					<div class="gameStats">
+						<ul>
+							<li><p>Score: ${game.score}</p></li>
+							<li><p>Strikes: ${game.strikeTotal}</p></li>
+							<li><p>Spares: ${game.spareTotal}</p></li>
+							<li><p>Open Frames: ${game.openFrameTotal}</p></li>
+						</ul>
+					</div>
 						<table>
 							<tr>`;
 	for (let i = 1; i < 11; i++) {
