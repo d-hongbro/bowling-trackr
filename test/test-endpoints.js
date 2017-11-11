@@ -25,7 +25,6 @@ describe('Bowling Trackr API Resource', function() {
 				.get('/')
 				.then(function(res) {
 					res.should.have.status(200);
-					res.body.should.not.be.empty();
 				});
 		});
 	});
