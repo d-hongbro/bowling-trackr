@@ -5,163 +5,198 @@ let MOCK_GAME_LIST = {
 		{
 			"id": "1111111",
 			"frame1": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore": 6
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 6,
+				"strike": 0,
+				"spare": 0
+
 			},
 			"frame2": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore": 12
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 12,
+				"strike": 0,
+				"spare": 0
 			},
 			"frame3": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore": 18
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 18,
+				"strike": 0,
+				"spare": 0
 			},
 			"frame4": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore": 24
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 24,
+				"strike": 0,
+				"spare": 0
 			},
 			"frame5": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore": 30
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 30,
+				"strike": 0,
+				"spare": 0
 			},
 			"frame6": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore": 36
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 36,
+				"strike": 0,
+				"spare": 0
 			},
 			"frame7": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore": 42
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 42,
+				"strike": 0,
+				"spare": 0
 			},
 			"frame8": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore":48
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 48,
+				"strike": 0,
+				"spare": 0
 			},
 			"frame9": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"finalScore": 54
-			},
-			"frame10": {
-				"firstTryPins": [1, 3, 5],
-				"firstTryScore": 3,
-				"secondTryPins":[2, 4, 10],
-				"secondTryScore": 3,
-				"thirdTryPins": [],
-				"thirdTryScore": 0,
-				"finalScore": 60
-			},
-			"score": 60,
-			"strikeTotal": 0,
-			"spareTotal": 0,
-			"openFrameTotal": 10,
-		},
-		{
-			"id": "2222222",
-			"frame1": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins": [],
-				"secondTryScore": 3,
-				"finalScore": 6
-			},
-			"frame2": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 3,
-				"finalScore": 12
-			},
-			"frame3": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 3,
-				"finalScore": 18
-			},
-			"frame4": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 3,
-				"finalScore": 24
-			},
-			"frame5": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 3,
-				"finalScore": 30
-			},
-			"frame6": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 3,
-				"finalScore": 36
-			},
-			"frame7": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 3,
-				"finalScore": 42
-			},
-			"frame8": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 3,
-				"finalScore":48
-			},
-			"frame9": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 3,
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
 				"finalScore": 54,
 				"strike": 0,
 				"spare": 0
 			},
 			"frame10": {
-				"firstTryPins": [],
-				"firstTryScore": 3,
-				"secondTryPins":[],
-				"secondTryScore": 7, // / is a representation not a data.
-				"thirdTryPins": [],
-				"thirdTryScore": 10 , // 10
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"pins3": [],
+				"score3": 0,
+				"finalScore": 60
+			},
+			"score": 60,
+			"strikes": 0,
+			"spares": 0,
+			"openFrames": 10,
+		},
+		{
+			"id": "2222222",
+			"frame1": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 6,
+				"strike": 0,
+				"spare": 0
+
+			},
+			"frame2": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 12,
+				"strike": 0,
+				"spare": 0
+			},
+			"frame3": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 18,
+				"strike": 0,
+				"spare": 0
+			},
+			"frame4": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 24,
+				"strike": 0,
+				"spare": 0
+			},
+			"frame5": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 30,
+				"strike": 0,
+				"spare": 0
+			},
+			"frame6": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 36,
+				"strike": 0,
+				"spare": 0
+			},
+			"frame7": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 42,
+				"strike": 0,
+				"spare": 0
+			},
+			"frame8": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 48,
+				"strike": 0,
+				"spare": 0
+			},
+			"frame9": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 3,
+				"finalScore": 54,
+				"strike": 0,
+				"spare": 0
+			},
+			"frame10": {
+				"pins1": [1, 3, 5],
+				"score1": 3,
+				"pins2":[2, 4, 10],
+				"score2": 7,
+				"pins3": [],
+				"score3": 10,
 				"finalScore": 74
-				"strike": 1
 			},
 			"score": 74,
-			"strikeTotal": 1,
-			"spareTotal": 0,
-			"openFrameTotal": 10,
+			"strikes": 1,
+			"spares": 1,
+			"openFrames": 9,
 		}
 	]
 };
@@ -175,8 +210,55 @@ function getRecentGameList(callback) {
 	}, 1);
 }
 
-function renderSpareStrikes(userInput) {
+function renderSpareStrikes(score1, score2, score3 = '') {
+	let symbol1, symbol2, symbol3;
+	if (score1 == 10 && score2 == 10 && score3 == 10) {
+		// XXX
+		symbol1, symbol2, symbol3 = 'X';
+	} else if (score1 == 10 && score2 == 10 && score3 < 10) {
+		// XX3
+		symbol1, symbol2 = 'X';
+		symbol3 = score3;
+	} else if (score1 == 10 && (score2 + score3) == 10) {
+		// X2/
+		symbol1 = 'X';
+		symbol2 = score2;
+		symbol3 = '/';
+	} else if (score1 == 10 && (score2 + score3) < 10) {
+		// X22
+		symbol1 = 'X';
+		symbol2 = score2;
+		symbol3 = score3;
+	} else if ((score1 + score2) == 10 && score3 == 10) {
+		// 2/X
+		symbol1 = score1;
+		symbol2 = '/';
+		symbol3 = 'X';
+	} else if ((score1 + score2) == 10 && score3 < 10) {
+		// 2/3
+		symbol1 = score1;
+		symbol2 = '/';
+		symbol3 = score3;
+	} else if (score1 == 10) {
+		// X
+		symbol1 = 'X';
+		symbol2, symbol3 = false;
+	} else if ((score1 + score2) == 10) {
+		// 2/
+		symbol1 = score1;
+		symbol2 = '/';
+		symbol3 = false;
+	} else if ((score1 + score2) < 10) {
+		// 22
+		symbol1 = score1;
+		symbol2 = score2;
+		symbol3 = false;
+	}
+	return [symbol1, symbol2, symbol3];
+}
 
+function renderTDSpanElement(input) {
+	return `<span>${input}</span>`;
 }
 
 function gameHTMLCard(game) {
@@ -188,9 +270,9 @@ function gameHTMLCard(game) {
 					<div class="gameStats">
 						<ul>
 							<li><p>Score: ${game.score}</p></li>
-							<li><p>Strikes: ${game.strikeTotal}</p></li>
-							<li><p>Spares: ${game.spareTotal}</p></li>
-							<li><p>Open Frames: ${game.openFrameTotal}</p></li>
+							<li><p>Strikes: ${game.strikes}</p></li>
+							<li><p>Spares: ${game.spares}</p></li>
+							<li><p>Open Frames: ${game.openFrames}</p></li>
 						</ul>
 					</div>
 						<table>
@@ -202,11 +284,12 @@ function gameHTMLCard(game) {
 					<tr>`;
 	for (let j = 1; j < 11; j++) {
 		const frame = `frame${j}`;
-		if (j == 10 && typeof game[frame].thirdTryScore.length !== 'undefined') {
-			console.log(game[frame].thirdTryScore.length);
-			html += `<td><span>${game[frame].firstTryScore}</span><span>${game[frame].secondTryScore}</span><span>${game[frame].thirdTryScore}</span></td>`;
+		if (j == 10 && typeof game[frame].score3 !== 'undefined') {
+			const [symbol1, symbol2, symbol3] = renderSpareStrikes(game[frame].score1, game[frame].score2, game[frame].score3);
+			html += `<td>${renderTDSpanElement(symbol1)}${symbol2 ? renderTDSpanElement(symbol2) : ''}${symbol3 ? renderTDSpanElement(symbol3) : ''}</td>`;
 		} else {
-			html += `<td><span>${game[frame].firstTryScore}</span><span>${game[frame].secondTryScore}</span></td>`;
+			const [symbol1, symbol2] = renderSpareStrikes(game[frame].score1, game[frame].score2);
+			html += `<td>${renderTDSpanElement(symbol1)}${symbol2 ? renderTDSpanElement(symbol2) : ''}</td>`;
 		}
 	}
 	html += `</tr>
