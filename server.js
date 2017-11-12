@@ -31,7 +31,107 @@ app.get('/list/game', function(req, res) {
 
 app.get('/game/:id', function(req, res) {
   // create function to get the game id and merge into the template html and send the content back
-  res.sendFile(path.join(__dirname, '/public', 'game.html'));
+  
+
+  res.sendFile(path.join(__dirname, '/public/html', 'game.html'));
+  res.body = {
+      "id": "333333",
+      "frame1": {
+        "pins1": [],
+        "score1": 0,
+        "pins2": [],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+
+      },
+      "frame2": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "frame3": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "frame4": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "frame5": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "frame6": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "frame7": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "frame8": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "frame9": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "frame10": {
+        "pins1": [],
+        "score1": 0,
+        "pins2":[],
+        "score2": 0,
+        "finalScore": 0,
+        "strike": 0,
+        "spare": 0
+      },
+      "score": 0,
+      "strikes": 0,
+      "spares": 0,
+      "openFrames": 0,
+    };
   // req.params.id
   // check if the sendfile works
   res.status(200);
