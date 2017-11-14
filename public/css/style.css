@@ -175,3 +175,39 @@ a:link, a:visited, a:hover, a:active {
 	text-decoration: none;
 	color: #fff;
 }
+
+/* GAME STYLING */
+
+#gameStats {
+	background: #FFFFE0;
+	margin-bottom: 2em;
+}
+
+#gameStats ul {
+	list-styl-type: none;
+	padding: 0 2em;
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+#gameStats li {
+	display: inline-flex;
+	align-items: center;
+}
+
+.gameTable {
+	margin: 0 1em 2em 1em;
+}
+
+.gameTable table {
+	width: 100%;
+}
+
+.numberInput {
+	padding: 1em;
+}
+
+.inputButton {
+	padding: 1em;
+}
