@@ -729,34 +729,169 @@ function deleteScoreChangesByType(type, frame, turn, value, prev) {
 	}
 }
 
-function processBackButton(frame, turn, value) {
-	let deleteStack = [];
-
-		// change this to a regular for loop expression to get the place of element
-		// error does not equal current turn and frame. its always 1 ahead...need fix
-
-	const lastTurn = scoreChanges.reduce(function(a, b) {
-		return a.concat(b);
-	}, []).max();
-	console.log(lastTurn);
-		for (let i = 0; i < scoreChanges.length; i++) {
-			if (scoreChanges[i][2] == turn && scoreChanges[i][1] == frame) {
-				deleteScoreChangesByType(scoreChanges[i][0], scoreChanges[i][1], scoreChanges[i][2], scoreChanges[i][3], scoreChanges[i][4]);
-				deleteStack.push(i);
-			}
+function findMaxFrameScoreChanges(array, column, type) {
+	let max = array.reduce(function(a, b) {
+		if (a[column] > b[column] && b[0] == type) {
+			return a;
+		} else {
+			return b;
 		}
-
-		// scoreChanges.forEach((element) => {
-		// 	// if Element is the current turn where back was logged
-		// 	if (element[2] == turn && element[1] == frame) {
-		// 		deleteScoreChangesByType(element[0], element[1], element[2], element[3], element[4]);
-		// 		deleteStack.push(element);
-		// 	}
-		// });
-
-	deleteStack.forEach(element => {
-		scoreChanges.splice(element, 1);
 	});
+	return max[column];
+}
+
+function findMaxTurnScoreChanges(array, column, frame, type) {
+	let max = array.reduce(function(a, b) {
+		if (a[1] == frame && a[column] > b[column] && b[0] == type) {
+			return a;
+		} else {
+			return b;
+		}
+	});
+	return max[column];
+}
+
+function deleteElementsScoreChanges(frame, turn) {
+	let array = scoreChanges.filter(function(item) {
+		if (item[1] == frame && item[2] == turn) {
+			return false;
+		} else {
+			return true;
+		}
+	});
+	return array;
+}
+
+function searchElementScoreChanges(frame, turn, type) {
+	let array = scoreChanges.filter(function(item) {
+		if (item[0] == type && item[1] == frame && item[2] == turn) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+	return array;
+}
+
+
+function revertScoreChangesByType(frame, turn, array) {
+	let prevScoreTop = 0; 
+	let prevScore = 0;
+	let prevOpen = 0;
+	let prevStrike = 0;
+	let prevSpares = 0;
+	const targetFrame = `frame${frame}`;
+
+	for (let i = 0; i < array.length; i++) {
+		if (array[i][1] == frame && array[i][2] == turn) {
+			// Account for scoreTop
+			if (array[i][0] == 'scoreTop') {
+				$('#scoreValue').text(prevScoreTop);
+			} else if (array[i][0] == 'score') {
+				$(`#frameScore${frame} span`).text('');
+				MOCK_POST_DATA[targetFrame].finalScore = 0;
+			} else if (array[i][0] == 'open') {
+				$('#openFramesValue').text(prevOpen);
+			} else if (array[i][0] == 'strike') {
+				$('#strikesValue').text(prevStrike);
+			} else if (array[i][0] == 'spare') {
+				$('#sparesValue').text(prevSpares);
+			} else if (array[i][0] == 'input') {
+				$(`#frameInput${frame}`).children(`span:nth-child(${turn})`).text('');
+			}
+		} else if (array[i][0] == 'scoreTop') {
+			prevScoreTop = array[i][3];
+		} else if (array[i][0] == 'score') {
+			prevScore = array[i][3];
+		} else if (array[i][0] == 'open') {
+			prevOpen = array[i][3];
+		} else if (array[i][0] == 'strike') {
+			prevStrike = array[i][3];
+		} else if (array[i][0] == 'spare') {
+			prevSpares = array[i][3];
+		}
+	}
+	// Account for scoretop
+
+	// Account for score
+
+	// Account for open
+
+	// Account for strike
+
+	// Account for Spares
+}
+
+function processBackButton(frame, turn, value) {
+	// Position in the array
+	// ["input", 1, 1, "5"]
+	// [type, frame, turn, value]
+	let maxFrame = findMaxFrameScoreChanges(scoreChanges, 1, "input");
+	let maxTurn = findMaxTurnScoreChanges(scoreChanges, 2, maxFrame, "input");
+	
+	// revert last changes (delete elements from the array)
+	// then grab max
+	// then reapply scores
+	// change game object
+	// then change frame turn
+	let newScoreChanges = deleteElementsScoreChanges(maxFrame, maxTurn);
+
+	revertScoreChangesByType(maxFrame, maxTurn, scoreChanges);
+	storeIntoGameObjectScore(maxFrame, maxTurn, 0, returnPreviousDataSet(maxFrame));
+
+
+	let newMaxFrame = findMaxFrameScoreChanges(newScoreChanges, 1, "input");
+	let newMaxTurn = findMaxTurnScoreChanges(newScoreChanges, 2, newMaxFrame, "input");
+
+	currentFrame = maxFrame;
+	currentTurn = maxTurn;
+
+	scoreChanges = newScoreChanges;
+
+	let inputElement = searchElementScoreChanges(newMaxFrame, newMaxTurn, "input");
+	const lastValue = parseInt(inputElement[0][3]);
+
+	renderInputButtons(lastValue, currentFrame, currentTurn, getPreviousFrames(0, currentFrame)) 
+	console.log({
+		process: 'processBackButton',
+		maxTurn: maxTurn,
+		maxFrame: maxFrame,
+		newMaxTurn: newMaxTurn,
+		newMaxFrame: newMaxFrame,
+		currentFrame: currentFrame,
+		currentTurn: currentTurn,
+		newScoreChanges: newScoreChanges
+	});
+
+
+
+	// let deleteStack = [];
+
+	// 	// change this to a regular for loop expression to get the place of element
+	// 	// error does not equal current turn and frame. its always 1 ahead...need fix
+
+	// const lastTurn = scoreChanges.reduce(function(a, b) {
+	// 	return a.concat(b);
+	// }, []).max();
+	// console.log(lastTurn);
+	// 	for (let i = 0; i < scoreChanges.length; i++) {
+	// 		if (scoreChanges[i][2] == turn && scoreChanges[i][1] == frame) {
+	// 			deleteScoreChangesByType(scoreChanges[i][0], scoreChanges[i][1], scoreChanges[i][2], scoreChanges[i][3], scoreChanges[i][4]);
+	// 			deleteStack.push(i);
+	// 		}
+	// 	}
+
+	// 	// scoreChanges.forEach((element) => {
+	// 	// 	// if Element is the current turn where back was logged
+	// 	// 	if (element[2] == turn && element[1] == frame) {
+	// 	// 		deleteScoreChangesByType(element[0], element[1], element[2], element[3], element[4]);
+	// 	// 		deleteStack.push(element);
+	// 	// 	}
+	// 	// });
+
+	// deleteStack.forEach(element => {
+	// 	scoreChanges.splice(element, 1);
+	// });
 
 
 }
@@ -809,15 +944,15 @@ function renderStatsOnScreen(value, frame, turn, data) {
 	if (value == 'X') {
 		const totalStrikes = parseInt($('#strikesValue').text()) + 1;
 		$('#strikesValue').text(totalStrikes);
-		storeScoreChangeLocations('strike', 0, frame, turn, value);
+		storeScoreChangeLocations('strike', 0, frame, turn, totalStrikes);
 	} else if (value == '/' && data[0][0] < 10) {
 		const totalSpares = parseInt($('#sparesValue').text()) + 1;
 		$('#sparesValue').text(totalSpares);
-		storeScoreChangeLocations('spare', 0, frame, turn, value);
+		storeScoreChangeLocations('spare', 0, frame, turn, totalSpares);
 	} else if (turn == 2 && value < 10 && data[0][0] < 10) {
 		const totalOpenFrames = parseInt($('#openFramesValue').text()) + 1;
 		$('#openFramesValue').text(totalOpenFrames);
-		storeScoreChangeLocations('open', 0, frame, turn, value);
+		storeScoreChangeLocations('open', 0, frame, turn, totalOpenFrames);
 	}
 
 
@@ -937,9 +1072,10 @@ function handleNumberInputButtonsClick2() {
 			displayCurrentScore2(value, currentFrame, currentTurn);
 			renderUserInputOnScreen(value, currentFrame, currentTurn);
 			processCurrentFrameTurnForward(value);
+			renderInputButtons(value, currentFrame, currentTurn, getPreviousFrames(0, currentFrame));
 		}
 
-		renderInputButtons(value, currentFrame, currentTurn, getPreviousFrames(0, currentFrame));
+
 		console.log({
 			process: 'END',
 			value: value,
