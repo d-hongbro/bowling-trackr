@@ -1,0 +1,67 @@
+game features
+
+User will be able to add scores via pin input or number input
+User will be able to go back to specific frames
+User will be able to see the maximum score possible with the current score
+User will be able to see frame by frame current score
+User will be able to clear the table
+User will be able to save the game once done
+User will be able to go create a new game after being done or go back to the game list or dashboard
+
+dashboard features
+
+User will be able to see statistics like average game score, average strikes, average open frames, average spares, top 3 pin layout, top 3 highest pin conversion layouts
+
+User will be able change his password
+User will be able to change his email
+User will be able to change notification settings
+User will be able to see graphs with different statistics plotted against per game
+
+datatables
+
+Persons
+	id
+	first name
+	last name
+	email
+	password
+	highest score
+	average score
+	average strikes
+	average open frames
+	average spares
+	pins - hold pin layout, game id, frame, turn
+	number of games
+	gamescores
+	created date
+	birthday
+
+Games
+	game id
+	game name
+	frames scores
+	strikes
+	spares
+	open frames
+	score
+	created date
+
+Leagues
+	league id
+	league name
+	game id list
+	person id
+	create date
+	first game added date
+
+
+notes...
+Do I need to have possible pin combinations in the database?
+
+
+
+
+LOGIN
+Let the user know that the passsword is 8 characters long
+Show the user the success error message of ajax call
+Clear the the forms after ajax call
