@@ -37,7 +37,7 @@ function errorSignUp(data) {
 
 function successLogin(data) {
 	let message = `Welcome ${data.user.firstName}! Redirecting you to the app.`;
-	renderStatusMessage('sucess', message);
+	renderStatusMessage('success', message);
 }
 
 function errorLogin(data) {

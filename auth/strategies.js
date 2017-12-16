@@ -30,6 +30,8 @@ const localStrategy = new LocalStrategy((username, password, callback) => {
           reason: 'LoginError',
           message: 'Incorrect username or password'
         });
+      } else {
+        // this is where you create session
       }
       return callback(null, user);
     })

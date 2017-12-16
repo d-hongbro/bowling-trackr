@@ -8,6 +8,12 @@ const morgan = require('morgan');
 const passport = require('passport');
 const path = require('path');
 const app = express();
+const {User} = require('./users/models');
+
+app.use(require('cookie-parser')());
+app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 const {DATABASE_URL, PORT} = require('./config');
 
@@ -41,13 +47,25 @@ app.use(function (req, res, next) {
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  User.findById(id, function (err, user) {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
+
+
 app.use('/api/users/', usersRouter);
 app.use('/api/auth/', authRouter);
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
 // A protected endpoint which needs a valid JWT to access it
-app.get('/api/protected', jwtAuth, (req, res) => {
+app.get('/api/protected', require('connect-ensure-login').ensureLoggedIn('/'), (req, res) => {
   return res.json({
     data: 'rosebud'
   });

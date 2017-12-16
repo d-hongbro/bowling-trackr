@@ -65,3 +65,11 @@ LOGIN
 Let the user know that the passsword is 8 characters long
 Show the user the success error message of ajax call
 Clear the the forms after ajax call
+
+UPDATE 12-15-17
+Flash Messages
+Game endpoints
+game.js finish
+templating
+css
+reorganize files
