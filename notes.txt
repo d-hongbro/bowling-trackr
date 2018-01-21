@@ -73,3 +73,17 @@ game.js finish
 templating
 css
 reorganize files
+
+UPDATE 1-12-18
+Use Handlebars
+express-handlebars
+templating engine
+reorganize file structure
+find out what I need to do
+
+1-20-18
+1. Switch everything to handlebars
+2. JWT integration
+3. Game list page
+4. Game creation rendering
+5. css everything
