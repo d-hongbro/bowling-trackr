@@ -1,0 +1,592 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"input",
+				"inputCompany"
+			],
+			[
+				"new-ea",
+				"new-age-theme-about"
+			],
+			[
+				"profil",
+				"profileRouter"
+			],
+			[
+				"hash",
+				"hashPassword"
+			],
+			[
+				"ap",
+				"apiRepr"
+			],
+			[
+				"messa",
+				"messageDialog"
+			],
+			[
+				"sidebarS",
+				"sidebarSearch"
+			],
+			[
+				"on",
+				"onHomePageSizeChange"
+			],
+			[
+				"home",
+				"homeWidth"
+			],
+			[
+				"side",
+				"sidebarStates"
+			],
+			[
+				"viewport",
+				"viewportWidth"
+			],
+			[
+				"table",
+				"tableResponsive"
+			],
+			[
+				"current",
+				"currentWidth"
+			],
+			[
+				"modal",
+				"modal-backdrop"
+			],
+			[
+				"pla",
+				"pleaseWaitDialog"
+			],
+			[
+				"pre",
+				"progressBar"
+			],
+			[
+				"add",
+				"addResponsiveClasses"
+			],
+			[
+				"viewpo",
+				"viewportWidth"
+			],
+			[
+				"listen",
+				"listenToSidebarState"
+			],
+			[
+				"satt",
+				"stateClicked"
+			],
+			[
+				"load",
+				"loadSidebarClickedTable"
+			],
+			[
+				"state",
+				"stateClicked"
+			],
+			[
+				"dropdo",
+				"dropdown-item"
+			],
+			[
+				"sidebar",
+				"sidebarStates"
+			],
+			[
+				"return",
+				"returnDropdownItem"
+			],
+			[
+				"dropdown",
+				"dropdownItem"
+			],
+			[
+				"retun",
+				"returnDropdownItem"
+			],
+			[
+				"dataTable",
+				"dataTableTwo"
+			],
+			[
+				"process",
+				"processCensusDataTypes"
+			],
+			[
+				"renderData",
+				"renderDataTableTwoHeader"
+			],
+			[
+				"query",
+				"queryData"
+			],
+			[
+				"que",
+				"queryData"
+			],
+			[
+				"render",
+				"renderDataTableTwoHeader"
+			],
+			[
+				"qu",
+				"queryData"
+			],
+			[
+				"results",
+				"resultsPerPage"
+			],
+			[
+				"page",
+				"pageNumber"
+			],
+			[
+				"CE",
+				"CENSUS_KEY"
+			],
+			[
+				"pro",
+				"processCensusData"
+			],
+			[
+				"get",
+				"getCensusData"
+			],
+			[
+				"jq",
+				"jqXHR"
+			],
+			[
+				"erro",
+				"errorThrown"
+			],
+			[
+				"call",
+				"callBack"
+			],
+			[
+				"strin",
+				"stringToSign"
+			],
+			[
+				"Search",
+				"SearchIndex"
+			],
+			[
+				"aws_",
+				"AWS_ENDPOINT"
+			],
+			[
+				"str",
+				"stringToSign"
+			],
+			[
+				"AWS_",
+				"AWS_URI"
+			],
+			[
+				"p",
+				"property"
+			],
+			[
+				"getAmaz",
+				"getAmazonQuery"
+			],
+			[
+				"getMi",
+				"getMilliseconds"
+			],
+			[
+				"chan",
+				"channelId"
+			],
+			[
+				"channel",
+				"CHANNEL_ENDPOINT"
+			],
+			[
+				"search",
+				"search-results"
+			],
+			[
+				"video",
+				"videoEmbed"
+			],
+			[
+				"listenTo",
+				"listenToScrollBottom"
+			],
+			[
+				"liste",
+				"listenToVideoClick"
+			],
+			[
+				"lis",
+				"listenToSubmit"
+			],
+			[
+				"li",
+				"listenToViewMoreClick"
+			],
+			[
+				"js-video",
+				"js-video-card"
+			],
+			[
+				"cha",
+				"channelId"
+			],
+			[
+				"vide",
+				"videoId"
+			],
+			[
+				"alt",
+				"altThumbnail"
+			],
+			[
+				"thum",
+				"thumbnail"
+			],
+			[
+				"searc",
+				"searchTerm"
+			],
+			[
+				"connect",
+				"connection"
+			],
+			[
+				"inp",
+				"inputContainer"
+			],
+			[
+				"input-",
+				"input-xsmall"
+			],
+			[
+				"variantML",
+				"variantMLarray"
+			],
+			[
+				"variant",
+				"variantMLarray"
+			],
+			[
+				"varia",
+				"variantMGsize"
+			],
+			[
+				"display",
+				"display_button"
+			],
+			[
+				"variants",
+				"variants_price"
+			],
+			[
+				"variants_",
+				"variants_url"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/layouts/main.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/home/about/about.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/apiUsers/models.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/README.md",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/www/server.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/apiAuth/strategies.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/home/router.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/home/login.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/home/signup.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/partials/footer.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/home/forgotpassword.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/public/css/style.css",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/users/router.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/users/index.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/user/login.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/public/vendor/landing-page-home/landing-page.css",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/home/index.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/public/vendor/new-age-theme-about/new-age.css",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/home/about.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/partials/nav.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/profile/index.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/profile/router.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Scoutr Resources/Freebie Footer Tempaltes/Footer-with-button-logo.html",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Scoutr Resources/Freebie Footer Tempaltes/assets/css/demo.css",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Scoutr Resources/Freebie Footer Tempaltes/assets/demo.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/public/vendor/new-age-theme-about/new-age.min.css",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/public/vendor/landing-page-home/landing-page.min.css",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Scoutr Resources/Landing Page Theme/startbootstrap-landing-page-master/css/landing-page.css",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Scoutr Resources/Landing Page Theme/startbootstrap-landing-page-master/index.html",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/home/contact.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/profile/index.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/profile/personal.hbs",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Scoutr Resources/bootstrap template contact form/Template-ContactForm/index.html",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Scoutr Resources/New Age About/startbootstrap-new-age-gh-pages/index.html",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/public/css/landing-page.min.css",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/views/index.hbs",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/package.json",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/auth/strategies.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/.gitignore",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/auth/router.js",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/users/models.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/bowling-trackr/package.json",
+		"/C/Documents and Settings/Boss David/Documents/Thinkful Bootcamp/Projects/guardup/server.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/security/security/views/layout/layout.hbs",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/security/security/views/layout.hbs",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/bowling-trackr/auth/index.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/bowling-trackr/auth/router.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/bowling-trackr/auth/strategies.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/bowling-trackr/users/index.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/bowling-trackr/users/models.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/bowling-trackr/users/router.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/bowling-trackr/server.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-app-mongoose-challenge-solution/.travis.yml",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-app/.gitignore",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/node-restaurants-app-mongoose/models.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-app/config.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-app/models.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-app/package.json",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-crud-api/.travis.yml",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/us-economy-research/README.md",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/us-economy-research/img/bg copy.jpg",
+		"/C/Program Files/Heroku/client/package.json",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-crud-api/blogPostRouter.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-crud-api/server.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-crud-api/models.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/blog-post-crud-api/package.json",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/learn-npm/package.json",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/us-economy-research/index.html",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/us-economy-research/js/census.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/us-economy-research/js/constants.js",
+		"/C/Users/Boss David/Documents/Thinkful Bootcamp/Projects/us-economy-research/css/style.css",
+		"/F/Thinkful Bootcamp/Projects/fashion-market-research/js/app.js",
+		"/F/Thinkful Bootcamp/Projects/fashion-market-research/css/scratchpad.css",
+		"/F/Thinkful Bootcamp/Projects/fashion-market-research/index.html",
+		"/F/Thinkful Bootcamp/Projects/youtube-data-api-search/index.html",
+		"/F/Thinkful Bootcamp/Projects/youtube-data-api-search/style.css",
+		"/F/Thinkful Bootcamp/Projects/youtube-data-api-search/grid.css",
+		"/F/Thinkful Bootcamp/Projects/youtube-data-api-search/app.js",
+		"/C/Program Files/Git/etc/profile",
+		"/C/Users/Boss David/project/app/server.js",
+		"/C/Users/Boss David/Desktop/Church/03192017 Pulpit Message.html",
+		"/C/Users/Boss David/Desktop/Church/03262017 Pulpit Message.html",
+		"/C/Users/Boss David/Desktop/Church/New Website/8rts.com/wp-config.php",
+		"/C/Users/Boss David/Desktop/Church/New Website/wp-config (1).php",
+		"/C/Users/Boss David/project/app/server2.js",
+		"/F/Business Ventures/Oil Patch Liquor Store/Website/enfold-child/footer.php",
+		"/F/Business Ventures/Kraze App/Website/Tools/CodeIgniter-3.1.5/application/views/welcome_message.php",
+		"/F/Business Ventures/Oil Patch Liquor Store/Ebay/Pill tempalte/pill template.html",
+		"/C/Users/Boss David/Desktop/Church/04092017 Pulpit Message.html",
+		"/C/Users/Boss David/Desktop/Church/03192017 CYA Forum.html",
+		"/C/Users/Boss David/Desktop/Church/03192017 CYA.html",
+		"/C/Users/Boss David/Desktop/Church/03122017 CYA.html",
+		"/C/Users/Boss David/Desktop/Church/03122017 CYA Forum",
+		"/C/Users/Boss David/Desktop/Church/03122017 Pulpit Message.html",
+		"/C/Users/Boss David/Desktop/Church/03122017 3rd Worship.html",
+		"/C/Users/Boss David/Desktop/wp-config.php",
+		"/D/Church/C4/c4rutc/New Website/enfold-child/functions.php",
+		"/F/Church/C4/c4rutc/New Website/enfold-child/functions.php",
+		"/F/Church/C4/c4rutc/New Website/enfold-child/style.css",
+		"/C/Users/Boss David/Desktop/Church/03052017 CYA Lecture 4.html",
+		"/C/Users/Boss David/Desktop/Church/03052017 CYA Lecture 3.html",
+		"/C/Users/Boss David/Desktop/Church/03052017 CYA Lecture 2.html",
+		"/C/Users/Boss David/Desktop/Church/03052017 CYA Lecture 1.html",
+		"/C/Users/Boss David/Desktop/Church/03052017 Pulpit Message.html",
+		"/E/Church/C4/c4rutc/New Website/plugin/youtube-live-stream-auto-embed/includes/shortcode.php",
+		"/E/Church/C4/c4rutc/New Website/plugin/youtube-live-stream-auto-embed/admin/options.php",
+		"/E/Church/C4/c4rutc/New Website/enfold-child/footer.php",
+		"/E/Church/C4/c4rutc/New Website/plugin/youtube-live-stream-auto-embed/youtube-live-stream-auto-embed.php",
+		"/E/Church/C4/c4rutc/New Website/Enfold Theme/enfold/footer.php",
+		"/D/Church/C4/c4rutc/New Website/Enfold Theme/enfold/template-blank.php",
+		"/D/Business Ventures/Tint/enfold-child/style.css",
+		"/D/Church/C4/c4rutc/New Website/Enfold Theme/enfold/page.php",
+		"/D/Church/C4/c4rutc/New Website/enfold-child/style.css",
+		"/C/Users/Boss David/Desktop/Church/02262017 Pulpit Message.html",
+		"/C/Users/Boss David/Desktop/Church/02262017 3rd Worship.html",
+		"/C/Users/Boss David/Desktop/Church/02262017 CYA.html",
+		"/C/Users/Boss David/Desktop/Church/02262017 CYA Forum.html",
+		"/D/Church/C4/c4rutc/New Website/Wordpress/wordpress/wp-config.php",
+		"/D/Business Ventures/Tint/enfold-child/functions.php",
+		"/C/Users/Boss David/Desktop/misc/wp-config.php",
+		"/C/Users/Boss David/Desktop/front-about.php",
+		"/C/Users/Boss David/Desktop/front-blocks.php",
+		"/C/Users/Boss David/Desktop/content-blocks.php",
+		"/C/Users/Boss David/Desktop/slider-static.php",
+		"/C/Users/Boss David/Desktop/Stay Kool Window Tinting/Website Theme/enfold/style.css",
+		"/C/Users/Boss David/Desktop/Stay Kool Window Tinting/enfold-child/functions.php",
+		"/C/Users/Boss David/Desktop/Stay Kool Window Tinting/enfold-child/style.css",
+		"/C/Users/Boss David/Desktop/Simple Co/Ebay/HTML Template/template.html"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 112.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "server.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 200.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

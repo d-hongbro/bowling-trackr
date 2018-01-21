@@ -6,9 +6,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
+const expHbs = require('express-handlebars');
 const path = require('path');
 const app = express();
 const {User} = require('./users/models');
+
+app.engine('.hbs', expHbs({
+  extname: '.hbs',
+  partialsDir: 'views/partials/'
+}));
+app.set('view engine', '.hbs');
 
 app.use(require('cookie-parser')());
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
@@ -30,7 +37,7 @@ app.use(bodyParser.json());
 // console.log(bobby); // De Niro - the variable name is bobby, not robert
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
-
+const { router: pagesRouter} = require('./pagesRouter');
 mongoose.Promise = global.Promise;
 
 // CORS
@@ -61,6 +68,7 @@ passport.deserializeUser(function(id, cb) {
 
 app.use('/api/users/', usersRouter);
 app.use('/api/auth/', authRouter);
+app.use('/', pagesRouter);
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
@@ -80,26 +88,8 @@ app.get('/favicon.ico', function(req, res) {
     res.status(204);
 });
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/html', 'index.html'));
-  res.status(200);
-});
 
-app.get('/list/game', jwtAuth, function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/html', 'gameList.html'));
-  // check if the sendfile works
-  res.status(200);
-});
 
-app.get('/game/:id', jwtAuth, function(req, res) {
-  // create function to get the game id and merge into the template html and send the content back
-  
-
-  res.sendFile(path.join(__dirname, '/public/html', 'game.html'));
-  // req.params.id
-  // check if the sendfile works
-  res.status(200);
-});
 
 // app.get('/', function(req, res) {
 //   res.status(200);
