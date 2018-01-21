@@ -211,3 +211,86 @@ a:link, a:visited, a:hover, a:active {
 .inputButton {
 	padding: 1em;
 }
+
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+
+/*.navbar {
+  padding: 1.5em 29.5em;
+}*/
+
+body {
+  padding-bottom: 40px;
+  background-color: #eee;
+  background: #f1e767;
+background: -moz-linear-gradient(top, #f1e767 0%, #feb645 100%);
+background: -webkit-linear-gradient(top, #f1e767 0%,#feb645 100%);
+background: linear-gradient(to bottom, #f1e767 0%,#feb645 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=0 );
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+html,body{
+    height: 100%
+}
+
+/*
+
+Site
+Background: #F6FAF8;
+Light Accent: #F1E767;
+Main Brand Color: FEB645;
+Dark Accent: #B3895F;
+Dark Shade: 48F47;
+
+
+Twitter
+Casablanca	#fab542	Primary
+Tundora	#483f47	Info
+Chelsea Cucumber	#80b14c	Success
+Tree Poppy	#fea114	Warning
+Pomegranate	#f44336	Danger
+
+
+
+*/

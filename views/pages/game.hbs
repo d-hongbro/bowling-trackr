@@ -1,0 +1,183 @@
+{{#> layouts/main title="Bowling Trackr"}}
+{{#*inline "scripts-block"}}
+
+{{/inline}}
+
+{{#*inline "main-block"}}
+<main>
+	<nav id="gameStats">
+		<ul>
+			<li><h1>Game 1</h1></li>
+			<li>
+				<span id="strikesName" class="statsName">Strikes:</span>
+				<span id="strikesValue" class="statsValue">0</span>
+			</li>
+			<li> 
+				<span id="sparesName" class="statsName">Spares:</span>
+				<span id="sparesValue" class="statsName">0</span>
+			</li>
+			<li>
+				<span id="openFramesName" class="statsName">Open Frames:</span>
+				<span id="openFramesValue" class="statsName">0</span>
+			</li>
+			<li>
+				<span id="scoreName" class="statsName">Score:</span>
+				<span id="scoreValue" class="statsName">0</span> 
+			</li>
+			<li>
+				<span id="maxScoreName" class="statsName">Max Score:</span>
+				<span id="maxScoreValue" class="statsName">300</span>
+			</li>
+		</ul>
+	</nav>
+	<div class="gameTable">
+		<table>
+			<tbody>
+				<tr>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>5</th>
+					<th>6</th>
+					<th>7</th>
+					<th>8</th>
+					<th>9</th>
+					<th>10</th>
+				</tr>
+				<tr>
+					<td id="frameInput1">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput2">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput3">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput4">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput5">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput6">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput7">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput8">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput9">
+						<span></span>
+						<span></span>
+					</td>
+					<td id="frameInput10">
+						<span></span>
+						<span></span>
+						<span></span>
+					</td>
+				</tr>
+				<tr>
+					<td id="frameScore1"><span></span></td>
+					<td id="frameScore2"><span></span></td>
+					<td id="frameScore3"><span></span></td>
+					<td id="frameScore4"><span></span></td>
+					<td id="frameScore5"><span></span></td>
+					<td id="frameScore6"><span></span></td>
+					<td id="frameScore7"><span></span></td>
+					<td id="frameScore8"><span></span></td>
+					<td id="frameScore9"><span></span></td>
+					<td id="frameScore10"><span></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="gameInput">
+		<div id="numberInput" class="tabContent">
+			<div class="row">
+				<div class="col-3">
+					<button id="input1" class="inputButton">1</button>
+					<button id="input4" class="inputButton">4</button>
+				</div>
+				<div class="col-3">
+					<button id="input2" class="inputButton">2</button>
+					<button id="input5" class="inputButton">5</button>
+				</div>
+				<div class="col-3">
+					<button id="input3" class="inputButton">3</button>
+					<button id="input6" class="inputButton">6</button>
+				</div>
+				<div class="col-3">
+					<button id="inputBack" class="inputButton large">Back</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3">
+					<button id="input7" class="inputButton">7</button>
+					<button id="inputSlash" class="inputButton">/</button>
+				</div>
+				<div class="col-3">
+					<button id="input8" class="inputButton">8</button>
+					<button id="input0" class="inputButton">0</button>
+				</div>
+				<div class="col-3">
+					<button id="input9" class="inputButton">9</button>
+					<button id="inputX" class="inputButton">X</button>
+				</div>
+				<div class="col-3">
+					<button id="inputNewGame" class="inputButton large">Next Game</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+<!-- 				<div class="tab">
+					<button class="tabButtons" type="button">Number Input</button>
+					<button class="tabButtons" type="button">Bowling Pin Input</button>
+				</div>
+
+				<div id="pinInput" class="tabContent">
+					<div class="row">
+						<input id="pin7" type="radio" name="pin7">
+						<input id="pin8" type="radio" name="pin8">
+						<input id="pin9" type="radio" name="pin9">
+						<input id="pin10" type="radio" name="pin10">
+					</div>
+					<div class="row">
+						<input id="pin4" type="radio" name="pin4">
+						<input id="pin5" type="radio" name="pin5">
+						<input id="pin6" type="radio" name="pin6">
+					</div>
+					<div class="row">
+						<input id="pin2" type="radio" name="pin2">
+						<input id="pin3" type="radio" name="pin3">	
+					</div>
+					<div class="row">
+						<input id="pin1" type="radio" name="pin1">
+					</div>
+				</div> -->
+
+				{{/inline}}
+
+				{{#*inline "scripts-block"}}
+				{{! this is where I need to enter the script for the login !}}
+				<script type="text/javascript" src="js/game.js"></script>
+				{{/inline}}
+
+				{{/layouts/main}}
+
+
+
