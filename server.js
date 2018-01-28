@@ -10,6 +10,7 @@ const expHbs = require('express-handlebars');
 const path = require('path');
 const app = express();
 const {User} = require('./users/models');
+const flash = require('express-flash');
 
 app.engine('.hbs', expHbs({
   extname: '.hbs',
@@ -21,6 +22,15 @@ app.use(require('cookie-parser')());
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
+
+// Custom flash middleware -- from Ethan Brown's book, 'Web Development with Node & Express'
+// app.use(function(req, res, next){
+//     // if there's a flash message in the session request, make it available in the response, then delete it
+//     res.locals.sessionFlash = req.session.sessionFlash;
+//     delete req.session.sessionFlash;
+//     next();
+// });
 
 const {DATABASE_URL, PORT} = require('./config');
 
@@ -42,7 +52,7 @@ mongoose.Promise = global.Promise;
 
 // CORS
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', '*'); // sending it to everybody
   res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
   res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
   if (req.method === 'OPTIONS') {
@@ -89,13 +99,6 @@ app.get('/favicon.ico', function(req, res) {
 });
 
 
-
-
-// app.get('/', function(req, res) {
-//   res.status(200);
-//   res.sendFile(path.join(__dirname, '../public', 'index.html'));
-// });
-
 let server;
 
 // this function connects to our database, then starts the server
@@ -116,6 +119,7 @@ function runServer(databaseUrl=DATABASE_URL, port=PORT) {
     });
   });
 }
+
 
 // this function closes the server, and returns a promise. we'll
 // use it in our integration tests later.

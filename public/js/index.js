@@ -3,7 +3,7 @@
 // lost password handling
 // session storage for JWT
 
-
+// need to make integration with flash messages?
 
 function messageWrapper(message) {
 	return `<p>${message}</p>`;
@@ -35,29 +35,38 @@ function errorSignUp(data) {
 	renderStatusMessage('error', message);
 }
 
+// This redirects the page on successful login to the game lists
 function successLogin(data) {
-	let message = `Welcome ${data.user.firstName}! Redirecting you to the app.`;
-	renderStatusMessage('success', message);
+	if (typeof data.redirect == 'string') {
+		window.location = data.redirect;
+	}
+	//let message = `Welcome ${data.user.firstName}! Redirecting you to the app.`;
+	//renderStatusMessage('success', message);
 }
 
 function errorLogin(data) {
-	let message;
-	if (data.status == 401) {
-		message = `Uh oh...Looks like you have entered the wrong credentials. Please enter them again.`;
-	} else {
-		message = 'Uh oh...Something went wrong.'
-	}
-	renderStatusMessage('error', message);
+	// let message;
+	// if (data.status == 401) {
+	// 	message = `Uh oh...Looks like you have entered the wrong credentials. Please enter them again.`;
+	// } else {
+	// 	message = 'Uh oh...Something went wrong.'
+	// }
+	// renderStatusMessage('error', message);
 }
 
 function listenToLoginFormSubmit() {
 	// captures the information and submits it via AJAX to the endpoints
 	// let user know that it has been submitted successfully
-	$('#formContainer').on('submit', '#loginForm', (event) => {
+	
+	$('.container').on('submit', '#loginForm', (event) => {
+		console.log('login form submitted');
 		let data = $('#loginForm').serializeArray().reduce(function(obj, item) {
 		    obj[item.name] = item.value;
 		    return obj;
 		}, {});
+		console.log({
+			listenToLoginFormSubmit: data
+		});
 		event.preventDefault();
 		data = JSON.stringify(data);
 		ajaxCall('/api/auth/login', data, 'post', successLogin, errorLogin);
@@ -73,7 +82,6 @@ function listenToSignUpFormSubmit() {
 		    return obj;
 		}, {});
 		data = JSON.stringify(data);
-		event.preventDefault();
 		ajaxCall('/api/users', data, 'post', successSignUp, errorSignUp);
 	});
 }
@@ -87,9 +95,11 @@ function ajaxCall(endpoint, data, type, successCallback, errorCallback) {
 		type: type,
 		success: function(data) {
 			successCallback(data);
+			console.log(data);
 		},
 		error: function(data) {
 			errorCallback(data);
+			console.log(data);
 		}
 	});
 }
@@ -101,9 +111,10 @@ function listenToForgetPasswordClick() {
 
 function listenToSignUpClick() {
 	// renders the sign up form to the user
-	$('#formContainer').on('click', '#signUpLink', (event) => {
-		event.preventDefault();
-		renderSignUpForm();
+	$('.container').on('click', '#signUpLink', (event) => {
+		window.location = '/signup';
+		// event.preventDefault();
+		// renderSignUpForm();
 	});
 }
 
@@ -113,16 +124,19 @@ function renderSignUpForm() {
 }
 
 function listenToLoginClick() {
-	$('#formContainer').on('click', '#loginLink', (event) => {
-		event.preventDefault();
-		renderLoginForm();
+	console.log({listenToLoginClick: 'loading'});
+	$('.container').on('click', '#loginLink', (event) => {
+		console.log({listenToLoginClick: 'clicked'});
+		// event.preventDefault();
+		// renderLoginForm();
+		window.location = '/login';
 	});
 }
 
-function renderLoginForm() {
-	const form = returnLoginFormHTML();
-	$('#formContainer').empty().append(form);
-}
+// function renderLoginForm() {
+// 	const form = returnLoginFormHTML();
+// 	$('#formContainer').empty().append(form);
+// }
 
 function returnLoginFormHTML() {
 	return `
