@@ -19,12 +19,15 @@ router.use(bodyParser.json());
 router.post('/login', localAuth, (req, res) => {
   const user = req.user.apiRepr();
   const authToken = createAuthToken(user);
-  res.json({authToken, user});
+  req.session.jwt = authToken;
+// This should redirect the user to the game list
+  res.send({redirect: '/list'});
+  // res.json({authToken, user});
 });
 
 router.get('/logout', (req, res) => {
   req.session.destroy(function (err) {
-    res.redirect('/'); 
+    res.redirect('/login'); 
   });
 });
 

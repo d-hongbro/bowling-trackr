@@ -35,6 +35,10 @@
         {{> layouts/nav}}
     {{/nav-block}}
 
+    {{#if message}}
+        <p><strong>FLASH!</strong> {{message}}</p>
+    {{/if}}
+
     {{#> main-block}}
         main
     {{/main-block}}
