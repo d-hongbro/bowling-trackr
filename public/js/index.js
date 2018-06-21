@@ -24,19 +24,22 @@ function renderStatusMessage(status, message) {
 }
 
 function successSignUp(data) {
+	console.log(data);
 	let message = `Welcome ${data.firstName}!
 		Your account has been created. Please login to start tracking your games.`;
-	renderLoginForm();
 	renderStatusMessage('success', message);
+	window.location = '/login';
 }
 
 function errorSignUp(data) {
+	console.log(data);
 	let message = data.responseJSON.message;
 	renderStatusMessage('error', message);
 }
 
 // This redirects the page on successful login to the game lists
 function successLogin(data) {
+	console.log(data);
 	if (typeof data.redirect == 'string') {
 		window.location = data.redirect;
 	}
@@ -58,7 +61,7 @@ function listenToLoginFormSubmit() {
 	// captures the information and submits it via AJAX to the endpoints
 	// let user know that it has been submitted successfully
 	
-	$('.container').on('submit', '#loginForm', (event) => {
+	$('#loginForm').on('submit', (event) => {
 		console.log('login form submitted');
 		let data = $('#loginForm').serializeArray().reduce(function(obj, item) {
 		    obj[item.name] = item.value;
@@ -74,9 +77,12 @@ function listenToLoginFormSubmit() {
 }
 
 function listenToSignUpFormSubmit() {
+	console.log('running');
 	// captures the information and submits it via AJAX to the endpoints
 	// Then updates the screen to let the user know that it has been submitted successfully
-	$('#formContainer').on('submit', '#registerForm', (event) => {
+	$('#registerForm').on('submit', (event) => {
+		event.preventDefault();
+		console.log('register submit');
 		let data = $('#registerForm').serializeArray().reduce(function(obj, item) {
 		    obj[item.name] = item.value;
 		    return obj;

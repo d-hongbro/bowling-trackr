@@ -1,213 +1,230 @@
+// console.log(document.cookie);
+// // optional: shorten 1st 2nd 
+// let MOCK_GAME_LIST = {
+// 	"gameList": [
+// 		{
+// 			"id": "1111111",
+// 			"frame1": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 6,
+// 				"strike": 0,
+// 				"spare": 0
 
-// optional: shorten 1st 2nd 
-let MOCK_GAME_LIST = {
-	"gameList": [
-		{
-			"id": "1111111",
-			"frame1": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 6,
-				"strike": 0,
-				"spare": 0
+// 			},
+// 			"frame2": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 12,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame3": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 18,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame4": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 24,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame5": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 30,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame6": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 36,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame7": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 42,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame8": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 48,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame9": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 54,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame10": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"pins3": [],
+// 				"score3": 0,
+// 				"finalScore": 60
+// 			},
+// 			"score": 60,
+// 			"strikes": 0,
+// 			"spares": 0,
+// 			"openFrames": 10,
+// 		},
+// 		{
+// 			"id": "2222222",
+// 			"frame1": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 6,
+// 				"strike": 0,
+// 				"spare": 0
 
-			},
-			"frame2": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 12,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame3": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 18,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame4": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 24,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame5": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 30,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame6": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 36,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame7": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 42,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame8": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 48,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame9": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 54,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame10": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"pins3": [],
-				"score3": 0,
-				"finalScore": 60
-			},
-			"score": 60,
-			"strikes": 0,
-			"spares": 0,
-			"openFrames": 10,
-		},
-		{
-			"id": "2222222",
-			"frame1": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 6,
-				"strike": 0,
-				"spare": 0
-
-			},
-			"frame2": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 12,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame3": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 18,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame4": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 24,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame5": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 30,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame6": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 36,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame7": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 42,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame8": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 48,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame9": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 3,
-				"finalScore": 54,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame10": {
-				"pins1": [1, 3, 5],
-				"score1": 3,
-				"pins2":[2, 4, 10],
-				"score2": 7,
-				"pins3": [],
-				"score3": 10,
-				"finalScore": 74
-			},
-			"score": 74,
-			"strikes": 1,
-			"spares": 1,
-			"openFrames": 9,
-		}
-	]
-};
+// 			},
+// 			"frame2": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 12,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame3": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 18,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame4": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 24,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame5": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 30,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame6": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 36,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame7": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 42,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame8": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 48,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame9": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 3,
+// 				"finalScore": 54,
+// 				"strike": 0,
+// 				"spare": 0
+// 			},
+// 			"frame10": {
+// 				"pins1": [1, 3, 5],
+// 				"score1": 3,
+// 				"pins2":[2, 4, 10],
+// 				"score2": 7,
+// 				"pins3": [],
+// 				"score3": 10,
+// 				"finalScore": 74
+// 			},
+// 			"score": 74,
+// 			"strikes": 1,
+// 			"spares": 1,
+// 			"openFrames": 9,
+// 		}
+// 	]
+// };
 
 // handle double clicks for buttons within the same function
 
 
 function getRecentGameList(callback) {
-	setTimeout(function() {
-		callback(MOCK_GAME_LIST);
-	}, 1);
+
+		$.ajax({
+			url: '/api/games',
+			contentType: 'application/json',
+			traditional: true,
+			type: 'get',
+			success: function(data) {
+				callback(data);
+			},
+			error: function(data) {
+				console.warn(data.responseText);
+				console.log(data);
+			}
+		});
+
+
+
+	// setTimeout(function() {
+	// 	callback(MOCK_GAME_LIST);
+	// }, 1);
 }
 
 function renderSpareStrikes(score1, score2, score3 = '') {
@@ -261,10 +278,11 @@ function renderTDSpanElement(input) {
 	return `<span>${input}</span>`;
 }
 
-function gameHTMLCard(game) {
+function gameHTMLCard(game, index) {
+	const gameNumber = parseInt(index);
 	let html = `<div class="gameCard">
 					<div class="gameTitle">
-						<h3>Game ${game.id}</h3>
+						<h3>Game ${gameNumber}</h3>
 					</div>
 					<div class="gameBody">
 					<div class="gameStats">
@@ -370,8 +388,9 @@ function gameHTMLCard(game) {
 }
 
 function displayGameList(data) {
-	for (index in data.gameList) {
-		const html = gameHTMLCard(data.gameList[index]);
+	console.log(data);
+	for (index in data) {
+		const html = gameHTMLCard(data[index], data.length - index);
 		$('#gameResult').append(html);
 	}
 }

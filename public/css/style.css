@@ -1,7 +1,39 @@
+/* Dynamically load css or preprocessor
+
+	THEME
+
+	Default bowling tv scorecard vs orange theme
+	How does handlebars handle theming
+*/
+
 *:before, *:after {
   box-sizing: inherit;
 }
 
+.overlay {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+/*
+
+NAVBAR
+
+*/
+
+.navbar {
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.9) !important;
+	max-height: 5em;
+	width: 100%;
+}
+
+.navbar-brand {
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.9) !important;
+}
+.navbar-nav .nav-item .nav-link {
+	color: rgba(255, 255, 255, 0.9) !important;
+}
 #navBar {
  	overflow: hidden;
   background-color: #333;
@@ -17,6 +49,7 @@
   text-align: center;
   text-decoration: none;
   list-style-type: none;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 #navBar li {
@@ -179,7 +212,7 @@ a:link, a:visited, a:hover, a:active {
 /* GAME STYLING */
 
 #gameStats {
-	background: #FFFFE0;
+	background: rgba(252, 252, 252, 0.2);
 	margin-bottom: 2em;
 }
 
@@ -230,18 +263,31 @@ a:link, a:visited, a:hover, a:active {
 body {
   padding-bottom: 40px;
   background-color: #eee;
-  background: #f1e767;
-background: -moz-linear-gradient(top, #f1e767 0%, #feb645 100%);
-background: -webkit-linear-gradient(top, #f1e767 0%,#feb645 100%);
-background: linear-gradient(to bottom, #f1e767 0%,#feb645 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=0 );
+  background: rgba(252, 190, 77, 0.8);
+background: -moz-linear-gradient(to bottom right, rgba(252, 190, 77, 0.8) 0%, rgba(253, 83, 76, 0.8) 100%);
+background: -webkit-linear-gradient(to bottom right, rgba(252, 190, 77, 0.8) 0%, rgba(253, 83, 76, 0.8) 100%);
+background: linear-gradient(to bottom right, rgba(252, 190, 77, 0.8) 0%, rgba(253, 83, 76, 0.8) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcc969', endColorstr='#fd8d68',GradientType=0 );
+	color: rgba(255, 255, 255, 0.9);
 }
 
+/*body {
+  padding-bottom: 40px;
+  background-color: #eee;
+  background: #FCBE4D;
+background: -moz-linear-gradient(to bottom right, #FCBE4D 0%, #FD534C 100%);
+background: -webkit-linear-gradient(to bottom right, #FCBE4D 0%,#FD534C 100%);
+background: linear-gradient(to bottom right, #FCBE4D 0%,#FD534C 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCBE4D', endColorstr='#FD534C',GradientType=0 );
+	color: rgba(255, 255, 255, 0.9);
+}*/
+
 .form-signin {
-  max-width: 330px;
+  max-width: 50%;
   padding: 15px;
   margin: 0 auto;
 }
+.form-signin .form-signin-heading {text-align: center;}
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
@@ -253,8 +299,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', end
   position: relative;
   box-sizing: border-box;
   height: auto;
-  padding: 10px;
+  padding: 1em 0.5em 1em 0.5em;
   font-size: 16px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgba(255, 236, 204, 0.3);
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+.form-control::placeholder {color: rgba(255, 236, 204, 0.8); padding-left: 3px;}
+.form-control::-webkit-input-placeholder { color: rgba(255, 236, 204, 0.8); padding-left: 3px;}  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: rgba(255, 236, 204, 0.8); padding-left: 3px;}  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: rgba(255, 236, 204, 0.8); padding-left: 3px;}  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: rgba(255, 236, 204, 0.8); padding-left: 3px;}  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: rgba(255, 236, 204, 0.8); padding-left: 3px;}  /* Microsoft Edge */
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
+.form-control:focus {
+  caret-color: rgba(255, 255, 255, 0.9);
 }
 .form-signin .form-control:focus {
   z-index: 2;
@@ -269,10 +333,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', end
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+#signUpLink, #loginLink {
+	text-align: center;
+	display: inherit;
+}
+
+.btn-primary {
+	background-color: rgba(255, 236, 204, 0.8) !important;
+	border: none !important;
+	color: rgba(253, 83, 76, 0.6) !important;
+	margin: 1.4em 0;
+}
+.btn:active, .btn:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
 
 html,body{
     height: 100%
 }
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	max-width: inherit;
+	width: inherit;
+	margin-bottom: 1em;
+}
+.footer p {
+	margin: auto;
+}
+
+
+/*rgba(242, 242, 242, 0.3)*/
+
 
 /*
 
@@ -292,5 +386,8 @@ Tree Poppy	#fea114	Warning
 Pomegranate	#f44336	Danger
 
 
+
+dark: FD534C;
+FCBE4D
 
 */

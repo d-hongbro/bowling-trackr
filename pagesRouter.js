@@ -8,10 +8,14 @@ const jwtAuth = passport.authenticate('jwt', { session: false });
 router.use(bodyParser.json());
 
 
-router.get('/', function(req, res) {
-  req.flash('success', 'Welcom!');
+// router.get('/', function(req, res) {
+//   req.flash('success', 'Welcom!');
 
-	res.render('pages/index', { title: 'Welcome', message: req.flash('success')});
+// 	res.render('pages/index', { title: 'Welcome', message: req.flash('success')});
+// });
+
+router.get('/', function(req, res) {
+  res.render('pages/index', { title: 'Welcome'})
 });
 
 router.get('/login', function(req, res) {
@@ -24,10 +28,15 @@ router.get('/signup', function(req, res) {
 
 // router.get('/list', jwtAuth, function(req, res) {
 router.get('/list', ensureLogin.ensureLoggedIn('/'), function(req, res) {
+  console.log(req.user);
 	res.render('pages/gameList', { title: 'Game List', login: true});
   // res.sendFile(path.join(__dirname, '/public/html', 'gameList.html'));
   // // check if the sendfile works
   // res.status(200);
+});
+
+router.get('/game', ensureLogin.ensureLoggedIn('/'),function(req, res) {
+  res.render('pages/game', { title: 'New Game', login: true});
 });
 
 // router.get('/game/:id', jwtAuth, function(req, res) {
@@ -40,6 +49,8 @@ router.get('/game/:id', ensureLogin.ensureLoggedIn('/'),function(req, res) {
   // // check if the sendfile works
   // res.status(200);
 });
+
+
 
 // // Route that creates a flash message using the express-flash module
 // app.all('/express-flash', function( req, res ) {

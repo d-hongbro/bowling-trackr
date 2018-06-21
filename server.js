@@ -47,7 +47,8 @@ app.use(bodyParser.json());
 // console.log(bobby); // De Niro - the variable name is bobby, not robert
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
-const { router: pagesRouter} = require('./pagesRouter');
+const { router: pagesRouter } = require('./pagesRouter');
+const { router: gamesRouter } = require('./games')
 mongoose.Promise = global.Promise;
 
 // CORS
@@ -75,7 +76,7 @@ passport.deserializeUser(function(id, cb) {
   });
 });
 
-
+app.use('/api/games/', gamesRouter);
 app.use('/api/users/', usersRouter);
 app.use('/api/auth/', authRouter);
 app.use('/', pagesRouter);
