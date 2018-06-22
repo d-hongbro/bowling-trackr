@@ -25,38 +25,41 @@
     <link rel="stylesheet" type="text/css" href="../../css/grid.css">
     <link rel="stylesheet" type="text/css" href="../../css/index.css">
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/responsive.css">
 
     {{#> head-block}}
         {{!-- Custom <head> content per page could be added. --}}
     {{/head-block}}
 </head>
 <body>
-    {{#> nav-block}}
-        {{> layouts/nav}}
-    {{/nav-block}}
+    <div class="overlay"></div>
+    <div class="container-fluid row h-100">
+        {{#> nav-block}}
+            {{> layouts/nav}}
+        {{/nav-block}}
 
-    {{#if message}}
-        <p><strong>FLASH!</strong> {{message}}</p>
-    {{/if}}
+        {{#if message}}
+            <p><strong>FLASH!</strong> {{message}}</p>
+        {{/if}}
 
-    {{#> main-block}}
-        main
-    {{/main-block}}
-    
-    <footer>
+        {{#> main-block}}
+            main
+        {{/main-block}}
+        
+       
         {{#> footer-block}}
             {{!-- better to put the footer tag here --}}
             {{> layouts/footer}}
         {{/footer-block}}
-    </footer>
-
+        
+    </div>
     <!-- Bootsrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <!-- JQUERY Easying -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
+     {{!-- <script type="text/javascript" src="../../js/theme.js"></script> --}}
     {{#> scripts-block}}
         {{!-- Custom scrupts per page can be added. --}}
     {{/scripts-block}}

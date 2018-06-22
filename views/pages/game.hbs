@@ -6,27 +6,25 @@
 {{#*inline "main-block"}}
 <main>
 	<nav id="gameStats">
+		<div>
+			<h1>Game 1</h1>
+		</div>
 		<ul>
-			<li><h1>Game 1</h1></li>
 			<li>
-				<span id="strikesName" class="statsName">Strikes:</span>
+				<span id="strikesName" class="statsName">STRIKES</span>
 				<span id="strikesValue" class="statsValue">0</span>
 			</li>
 			<li> 
-				<span id="sparesName" class="statsName">Spares:</span>
+				<span id="sparesName" class="statsName">SPARES</span>
 				<span id="sparesValue" class="statsName">0</span>
 			</li>
 			<li>
-				<span id="openFramesName" class="statsName">Open Frames:</span>
+				<span id="openFramesName" class="statsName">OPEN FRAMES</span>
 				<span id="openFramesValue" class="statsName">0</span>
 			</li>
 			<li>
-				<span id="scoreName" class="statsName">Score:</span>
+				<span id="scoreName" class="statsName">SCORE</span>
 				<span id="scoreValue" class="statsName">0</span> 
-			</li>
-			<li>
-				<span id="maxScoreName" class="statsName">Max Score:</span>
-				<span id="maxScoreValue" class="statsName">300</span>
 			</li>
 		</ul>
 	</nav>
@@ -138,6 +136,10 @@
 				<div class="col-3">
 					<button id="inputNewGame" class="inputButton large">Next Game</button>
 				</div>
+			</div>
+			<div class="row">
+				<button id="saveGame">Save Game</button>
+				<button id="clearGame">Clear Game</button>
 			</div>
 		</div>
 	</div>

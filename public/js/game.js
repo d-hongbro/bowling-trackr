@@ -1,95 +1,16 @@
 let MOCK_POST_DATA = {
 			"id": "333333",
-			"frame1": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame2": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame3": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame4": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame5": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame6": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame7": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame8": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame9": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"finalScore": 0,
-				"strike": 0,
-				"spare": 0
-			},
-			"frame10": {
-				"pins1": [],
-				"score1": 0,
-				"pins2": [],
-				"score2": 0,
-				"pins3": [],
-				"score3": 0,
-				"finalScore": 0
-			},
+			"user": 0,
+			"frame1": {"score1": 0, "score2": 0, "finalScore": 0},
+			"frame2": {"score1": 0, "score2": 0, "finalScore": 0},
+			"frame3": {"score1": 0,	"score2": 0, "finalScore": 0},
+			"frame4": {"score1": 0,	"score2": 0, "finalScore": 0},
+			"frame5": {"score1": 0,	"score2": 0, "finalScore": 0},
+			"frame6": {"score1": 0,	"score2": 0, "finalScore": 0},
+			"frame7": {"score1": 0,	"score2": 0, "finalScore": 0},
+			"frame8": {"score1": 0,	"score2": 0, "finalScore": 0},
+			"frame9": {"score1": 0, "score2": 0, "finalScore": 0},
+			"frame10": {"score1": 0, "score2": 0,	"score3": 0, "finalScore": 0},
 			"score": 0,
 			"strikes": 0,
 			"spares": 0,
@@ -111,28 +32,12 @@ let scores = {};
 let currentScore = 0;
 let scoreChanges = [];
 
-function renderNumberInputButton(value, symbol = value) {
-	return `<button id="input${value}" type="button" name="input${value}" class="numberInput">${symbol}</button>`;
-}
+// function renderNumberInputButton(value, symbol = value) {
+// 	return `<button id="input${value}" type="button" name="input${value}" class="numberInput">${symbol}</button>`;
+// }
 
-function renderScoreStats(value) {
+// function renderScoreStats(value) {
 
-}
-
-// Need to make this function dynamic
-// function getNumberInputButtons() {
-// 	let buttonsHtml = '';
-// 	for (let i = 1; i < 11; i++) {
-// 		if (i == 10) {
-// 			buttonsHtml += renderNumberInputButton(i, '/');
-// 			buttonsHtml += renderNumberInputButton(0);
-// 			buttonsHtml += renderNumberInputButton(i, 'X');
-// 		} else {
-// 			buttonsHtml += renderNumberInputButton(i);
-// 		}
-// 	}
-// 	console.log(buttonsHtml);
-// 	$('.gameInput').empty().append(buttonsHtml);
 // }
 
 function processNumberInputs(frame, turn, value, currentFrameScore) {
@@ -180,27 +85,27 @@ function processNumberInputs(frame, turn, value, currentFrameScore) {
 	}
 }
 
+//--
 
+// function returnSetScore(frame, turn, currentValue = ''){
+// 			console.log({
+// 				process: `returnSetScore(${frame}, ${turn}, ${currentValue})`,
+// 				currentFrame: currentFrame,
+// 				currentTurn: currentTurn
+// 			});
+// 	let scoreProcess;
+// 	if (currentValue == 'skip') {
+// 		scoreProcess = $(`#frameInput${currentFrame - frame}`).children(`span:nth-child(${currentTurn - turn})`).text();
+// 	} else {
+// 		scoreProcess = $(`#frameInput${currentFrame - frame}`).children(`span:nth-child(${currentTurn - turn})`).text(currentValue);
 
-function returnSetScore(frame, turn, currentValue = ''){
-			console.log({
-				process: `returnSetScore(${frame}, ${turn}, ${currentValue})`,
-				currentFrame: currentFrame,
-				currentTurn: currentTurn
-			});
-	let scoreProcess;
-	if (currentValue == 'skip') {
-		scoreProcess = $(`#frameInput${currentFrame - frame}`).children(`span:nth-child(${currentTurn - turn})`).text();
-	} else {
-		scoreProcess = $(`#frameInput${currentFrame - frame}`).children(`span:nth-child(${currentTurn - turn})`).text(currentValue);
+// 	}
+//  return scoreProcess;
+// }
 
-	}
- return scoreProcess;
-}
-
-function getPreviousScores(frame) {
-	return scores[currentFrame - frame];
-}
+// function getPreviousScores(frame) {
+// 	return scores[currentFrame - frame];
+// }
 
 
 
@@ -703,14 +608,17 @@ function deleteScoreChangesByType(type, frame, turn, value, prev) {
 		case 'strike':
 			const totalStrikes = parseInt($('#strikesValue').text()) - 1;
 			$('#strikesValue').text(totalStrikes);
+			MOCK_POST_DATA.strikes = totalStrikes;
 			break;
 		case 'spare':
 			const totalSpares = parseInt($('#sparesValue').text()) - 1;
 			$('#sparesValue').text(totalSpares);
+			MOCK_POST_DATA.spares = totalSpares;
 			break;
 		case 'open':
 			const totalOpenFrames = parseInt($('#openFramesValue').text()) - 1;
 			$('#openFramesValue').text(totalOpenFrames);
+			MOCK_POST_DATA.openFrames = totalOpenFrames;
 			break;
 		case 'input':
 			const screenInput = $(`#frameInput${frame}`).children(`span:nth-child(${turn})`).text();
@@ -722,6 +630,7 @@ function deleteScoreChangesByType(type, frame, turn, value, prev) {
 			break;
 		case 'scoreTop':
 			$('#scoreValue').text(prev);
+			MOCK_POST_DATA.score = prev;
 			break;
 		case 'score':
 			$(`#frameScore${currentFrame} span`).text();
@@ -787,15 +696,19 @@ function revertScoreChangesByType(frame, turn, array) {
 			// Account for scoreTop
 			if (array[i][0] == 'scoreTop') {
 				$('#scoreValue').text(prevScoreTop);
+				MOCK_POST_DATA.score = prevScoreTop;
 			} else if (array[i][0] == 'score') {
 				$(`#frameScore${frame} span`).text('');
 				MOCK_POST_DATA[targetFrame].finalScore = 0;
 			} else if (array[i][0] == 'open') {
 				$('#openFramesValue').text(prevOpen);
+				MOCK_POST_DATA.openFrames = prevOpen;
 			} else if (array[i][0] == 'strike') {
 				$('#strikesValue').text(prevStrike);
+				MOCK_POST_DATA.strikes = prevStrike;
 			} else if (array[i][0] == 'spare') {
 				$('#sparesValue').text(prevSpares);
+				MOCK_POST_DATA.spares = prevSpares;
 			} else if (array[i][0] == 'input') {
 				$(`#frameInput${frame}`).children(`span:nth-child(${turn})`).text('');
 			}
@@ -862,56 +775,13 @@ function processBackButton(frame, turn, value) {
 		currentTurn: currentTurn,
 		newScoreChanges: newScoreChanges
 	});
-
-
-
-	// let deleteStack = [];
-
-	// 	// change this to a regular for loop expression to get the place of element
-	// 	// error does not equal current turn and frame. its always 1 ahead...need fix
-
-	// const lastTurn = scoreChanges.reduce(function(a, b) {
-	// 	return a.concat(b);
-	// }, []).max();
-	// console.log(lastTurn);
-	// 	for (let i = 0; i < scoreChanges.length; i++) {
-	// 		if (scoreChanges[i][2] == turn && scoreChanges[i][1] == frame) {
-	// 			deleteScoreChangesByType(scoreChanges[i][0], scoreChanges[i][1], scoreChanges[i][2], scoreChanges[i][3], scoreChanges[i][4]);
-	// 			deleteStack.push(i);
-	// 		}
-	// 	}
-
-	// 	// scoreChanges.forEach((element) => {
-	// 	// 	// if Element is the current turn where back was logged
-	// 	// 	if (element[2] == turn && element[1] == frame) {
-	// 	// 		deleteScoreChangesByType(element[0], element[1], element[2], element[3], element[4]);
-	// 	// 		deleteStack.push(element);
-	// 	// 	}
-	// 	// });
-
-	// deleteStack.forEach(element => {
-	// 	scoreChanges.splice(element, 1);
-	// });
-
-
 }
-
-
-
-
-// Bad because this is only called when a score is updated
-// Have to chunk this function up into pieces
-// score rendering in one
-// the rest in another
-
-
-
-
 
 function renderStatsScoreOnScreen(type, frameOffset, frame, turn, frameScore) {
 	const prevFrameScore = $('#scoreValue').text();
 	storeScoreChangeLocations(type, frameOffset, frame, turn, frameScore, prevFrameScore);
 	$('#scoreValue').text(frameScore);
+	MOCK_POST_DATA.score = frameScore;
 }
 
 function renderStatsMaxOnScreen(value, frame, turn, data) {
@@ -944,40 +814,19 @@ function renderStatsOnScreen(value, frame, turn, data) {
 	if (value == 'X') {
 		const totalStrikes = parseInt($('#strikesValue').text()) + 1;
 		$('#strikesValue').text(totalStrikes);
+		MOCK_POST_DATA.strikes = totalStrikes;
 		storeScoreChangeLocations('strike', 0, frame, turn, totalStrikes);
 	} else if (value == '/' && data[0][0] < 10) {
 		const totalSpares = parseInt($('#sparesValue').text()) + 1;
 		$('#sparesValue').text(totalSpares);
+		MOCK_POST_DATA.spares = totalSpares;
 		storeScoreChangeLocations('spare', 0, frame, turn, totalSpares);
 	} else if (turn == 2 && value < 10 && data[0][0] < 10) {
 		const totalOpenFrames = parseInt($('#openFramesValue').text()) + 1;
 		$('#openFramesValue').text(totalOpenFrames);
+		MOCK_POST_DATA.openFrames = totalOpenFrames;
 		storeScoreChangeLocations('open', 0, frame, turn, totalOpenFrames);
 	}
-
-
-
-	// let totalStrikes = parseInt($('#strikesValue').text());
-	// let totalSpares = parseInt($('#sparesValue').text());
-	// let totalOpenFrames = parseInt($('#openFramesValue').text());
-	// console.log({
-	// 	process: renderStatsOnScreen,
-	// 	frameScore: frameScore,
-	// 	value: value,
-	// 	turn: turn,
-	// 	data: data
-	// });
-	// if (value == 10) {
-	// 	totalStrikes++;
-	// 	$('#strikesValue').text(totalStrikes);
-	// } else if ((data[0][0] + value == 10) || (data[0][1] + value == 10)) {
-	// 	totalSpares++;
-	// 	$('#sparesValue').text(totalSpares);
-	// } else if (value < 10 && turn == 2) {
-	// 	totalOpenFrames++
-	// 	$('#openFramesValue').text(totalOpenFrames)
-	// }
-	// $('#scoreValue').text(frameScore);
 }
 
 
@@ -1074,8 +923,6 @@ function handleNumberInputButtonsClick2() {
 			processCurrentFrameTurnForward(value);
 			renderInputButtons(value, currentFrame, currentTurn, getPreviousFrames(0, currentFrame));
 		}
-
-
 		console.log({
 			process: 'END',
 			value: value,
@@ -1113,279 +960,395 @@ function handleNumberInputButtonsClick2() {
 
 
 
-function displayCurrentScore(currentValue, frame, turn) {
-	// access the scores array and display score
-	console.log({
-		process: `displayCurrentScore(${currentValue})`,
-		currentValue: currentValue,
-		currentFrame: currentFrame,
-		currentTurn: currentTurn
-	});
-	let currentFrameScore = scores[currentFrame];
-	let previousScore = parseInt($(`#frameScore${currentFrame - 1} span`).text());
-	let prev1FrameScore = getPreviousScores(1);
-	let prev2Score = parseInt($(`#frameScore${currentFrame - 2} span`).text());
-	let prev2FrameScore = getPreviousScores(2);
-	let prev3Score = parseInt($(`#frameScore${currentFrame - 3} span`).text());
-	let prev3FrameScore = getPreviousScores(3);
-	let previousTurnScore;
+// function displayCurrentScore(currentValue, frame, turn) {
+// 	// access the scores array and display score
+// 	console.log({
+// 		process: `displayCurrentScore(${currentValue})`,
+// 		currentValue: currentValue,
+// 		currentFrame: currentFrame,
+// 		currentTurn: currentTurn
+// 	});
+// 	let currentFrameScore = scores[currentFrame];
+// 	let previousScore = parseInt($(`#frameScore${currentFrame - 1} span`).text());
+// 	let prev1FrameScore = getPreviousScores(1);
+// 	let prev2Score = parseInt($(`#frameScore${currentFrame - 2} span`).text());
+// 	let prev2FrameScore = getPreviousScores(2);
+// 	let prev3Score = parseInt($(`#frameScore${currentFrame - 3} span`).text());
+// 	let prev3FrameScore = getPreviousScores(3);
+// 	let previousTurnScore;
 
-// Tenth frame processing
+// // Tenth frame processing
 
 
-	if ((currentTurn == 2 || currentTurn == 3) && currentFrame !== 1) {
-		if (currentValue !== '/' && prev1FrameScore[0] !== 'X' && prev1FrameScore[1] !== '/') {
-			if (currentFrame == 2 && prev1FrameScore[0] == 'X') {
-				previousScore = 10 + parseInt(currentValue) + parseInt(currentFrameScore[0]);
-				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-				currentScore = previousScore + parseInt(currentValue) + parseInt(currentFrameScore[0]);
-				$(`#frameScore${currentFrame} span`).text(currentScore);
-				storeScoreChangeLocations([-1, 0], frame, turn, currentValue);
-			} else if (prev1FrameScore[0] == 'X') {
-				previousScore = prev2Score + parseInt(currentValue) + parseInt(currentFrameScore[0]);
-			} else {
-				currentScore = parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]) + previousScore;
-				$(`#frameScore${currentFrame} span`).text(currentScore);
-				storeScoreChangeLocations(0, frame, turn, currentValue);
-			}
-		} else if (currentValue == 'X' && currentFrame == 10) {
-			if (currentTurn == 2 && currentFrameScore[0] == 'X' && prev1FrameScore[0] == 'X') {
-				previousScore = prev2Score + 30;
-				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-				storeScoreChangeLocations(-1, frame, turn, currentValue);
-			} else if (currentTurn == 3 && currentFrameScore[0] == 'X' && currentFrameScore[1] == 'X' && currentValue == 'X') {
-				currentScore = previousScore + 30;
-				$(`#frameScore${currentFrame} span`).text(currentScore);
-				storeScoreChangeLocations(0, frame, turn, currentValue);
-			} else if (currentTurn == 3 && currentFrameScore[0] < 10 && currentFrameScore[1] == '/') {
-				currentScore = previousScore + 20;
-				$(`#frameScore${currentFrame} span`).text(currentScore);
-				storeScoreChangeLocations(0, frame, turn, currentValue);
-			}
-		// } else if (currentValue == '/' && prev1FrameScore.length == 2 && prev1FrameScore[1] == '/') {
-			// if (currentFrame < 3) {
-			// 	previousScore = 10 + parseInt(currentFrameScore[0]);
-			// 	$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-			// 	storeScoreChangeLocations(-1, frame, turn, currentValue);
-			// } else if (currentValue == '/' && prev1FrameScore.length == 2) {
-			// 	previousScore = prev2Score + 10 + parseInt(currentFrameScore[0]);
-			// 	$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-			// 	storeScoreChangeLocations(-1, frame, turn, currentValue);
-			// } 
-		} else if (currentValue == '/' && prev1FrameScore[0] == 'X' && currentTurn == 2) {
-			previousScore = prev2Score + 20;
-			$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-			storeScoreChangeLocations(-1, frame, turn, currentValue);
-		// } else if (currentValue == '/' && prev1FrameScore[1] == '/') { // current problems
-		// 	previousScore = prev2Score + 10 + parseInt(currentFrameScore[0]);
-		// 	$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-		// 	storeScoreChangeLocations(-1, frame, turn, currentValue);
-		// } else if (currentValue < 10 && currentFrameScore[0] == 'X' && currentFrame) {
-		// 	previousScore = prev2Score + 20 + parseInt(currentFrameScore[1]);
-		// 	$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-		// 	storeScoreChangeLocations(-1, frame, turn, currentValue);
-		// } else if (currentValue = '/' && (currentFrameScore[0] == 'X' || currentFrameScore[0] == '/') && (currentFrameScore[1] == 'X' || currentFrame[1] < 10)) {
-		// 	currentScore = previousScore + 20;
-		// 	$(`#frameScore${currentFrame} span`).text(currentScore);
-		// 	storeScoreChangeLocations(0, frame, turn, currentValue);
-		} else if (currentValue == '/' && currentTurn == 3) {
-			currentScore = previousScore + 20;
-			$(`#frameScore${currentFrame} span`).text(currentScore);
-			StoreScoreChangeLocations(0, frame, turn, currentValue);
-		} else if (currentValue < 10 && currentFrame != 10) {
-			currentScore = previousScore + parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]);
-			$(`#frameScore${currentFrame} span`).text(currentScore);
-			storeScoreChangeLocations(0, frame, turn, currentValue);
-		} else if (currentValue < 10 && currentTurn == 2 && currentFrameScore[0] !== 'X') {
-			previousScore = prev2Score + 10 + parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]);
-			$(`#frameScore${currentFrame -1 } span`).text(previousScore);
-			currentScore = previousScore + parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]);
-			$(`#frameScore${currentFrame} span`).text(currentScore);
-			storeScoreChangeLocations([-1, 0], frame, turn, currentValue);
-		} else if (currentValue < 10 && currentTurn == 2) {
-			previousScore = prev2Score + 20 + parseInt(currentFrameScore[1]);
-			$(`#frameScore${currentFrame -1 } span`).text(previousScore);
-			storeScoreChangeLocations(-1, frame, turn, currentValue);
-		} else if (currentValue < 10 && currentTurn == 3) {
-			if (currentFrameScore[0] < 10) {
-				currentScore = previousScore + 10 + parseInt(currentValue);
-				$(`#frameScore${currentFrame} span`).text(currentScore);
-				storeScoreChangeLocations(0, frame, turn, currentValue);
-			} else if (currentFrameScore[0] == 'X' && currentFrameScore[1] == 'X') {
-				currentScore = previousScore + 20 + parseInt(currentValue);
-				$(`#frameScore${currentFrame} span`).text(currentScore);
-				storeScoreChangeLocations(0, frame, turn, currentValue);
-			} else if (currentFrameScore[0] == 'X' && currentFrameScore[1] < 10) {
-				currentScore = previousScore + 10 + parseInt(currentFrameScore[1]) + parseInt(currentValue);
-				$(`#frameScore${currentFrame} span`).text(currentScore);
-				storeScoreChangeLocations(0, frame, turn, currentValue);
-			}
-		}
-	} else if (currentTurn == 2 && currentFrame == 1) {
-		if (currentValue !== '/') {
-			currentScore = parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]);
-			$(`#frameScore${currentFrame} span`).text(currentScore);
-			storeScoreChangeLocations(0, frame, turn, currentValue);
-		}
-	} else if (currentTurn == 1 && currentFrame !== 1) {
-		if (currentValue == 'X' && prev1FrameScore[1] == '/') {
-			if (currentFrame < 3) {
-				previousScore = 20;
-				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-				storeScoreChangeLocations(-1, frame, turn, currentValue);
-			} else if (prev2FrameScore[0] == 'X') {
-				previousScore = prev2Score + 20;
-				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-				storeScoreChangeLocations(-1, frame, turn, currentValue);
-			}
-		} else if (currentValue < 10 && prev1FrameScore[1] == '/') {
-			if (currentFrame > 2) {
-				previousScore = prev2Score + 10 + parseInt(currentValue);
-				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-				storeScoreChangeLocations(-1, frame, turn, currentValue);
-			} else {
-				previousScore = 10 + parseInt(currentValue);
-				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-				storeScoreChangeLocations(-1, frame, turn, currentValue);
-			}
+// 	if ((currentTurn == 2 || currentTurn == 3) && currentFrame !== 1) {
+// 		if (currentValue !== '/' && prev1FrameScore[0] !== 'X' && prev1FrameScore[1] !== '/') {
+// 			if (currentFrame == 2 && prev1FrameScore[0] == 'X') {
+// 				previousScore = 10 + parseInt(currentValue) + parseInt(currentFrameScore[0]);
+// 				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 				currentScore = previousScore + parseInt(currentValue) + parseInt(currentFrameScore[0]);
+// 				$(`#frameScore${currentFrame} span`).text(currentScore);
+// 				storeScoreChangeLocations([-1, 0], frame, turn, currentValue);
+// 			} else if (prev1FrameScore[0] == 'X') {
+// 				previousScore = prev2Score + parseInt(currentValue) + parseInt(currentFrameScore[0]);
+// 			} else {
+// 				currentScore = parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]) + previousScore;
+// 				$(`#frameScore${currentFrame} span`).text(currentScore);
+// 				storeScoreChangeLocations(0, frame, turn, currentValue);
+// 			}
+// 		} else if (currentValue == 'X' && currentFrame == 10) {
+// 			if (currentTurn == 2 && currentFrameScore[0] == 'X' && prev1FrameScore[0] == 'X') {
+// 				previousScore = prev2Score + 30;
+// 				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 				storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 			} else if (currentTurn == 3 && currentFrameScore[0] == 'X' && currentFrameScore[1] == 'X' && currentValue == 'X') {
+// 				currentScore = previousScore + 30;
+// 				$(`#frameScore${currentFrame} span`).text(currentScore);
+// 				storeScoreChangeLocations(0, frame, turn, currentValue);
+// 			} else if (currentTurn == 3 && currentFrameScore[0] < 10 && currentFrameScore[1] == '/') {
+// 				currentScore = previousScore + 20;
+// 				$(`#frameScore${currentFrame} span`).text(currentScore);
+// 				storeScoreChangeLocations(0, frame, turn, currentValue);
+// 			}
+// 		// } else if (currentValue == '/' && prev1FrameScore.length == 2 && prev1FrameScore[1] == '/') {
+// 			// if (currentFrame < 3) {
+// 			// 	previousScore = 10 + parseInt(currentFrameScore[0]);
+// 			// 	$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 			// 	storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 			// } else if (currentValue == '/' && prev1FrameScore.length == 2) {
+// 			// 	previousScore = prev2Score + 10 + parseInt(currentFrameScore[0]);
+// 			// 	$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 			// 	storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 			// } 
+// 		} else if (currentValue == '/' && prev1FrameScore[0] == 'X' && currentTurn == 2) {
+// 			previousScore = prev2Score + 20;
+// 			$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 			storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 		// } else if (currentValue == '/' && prev1FrameScore[1] == '/') { // current problems
+// 		// 	previousScore = prev2Score + 10 + parseInt(currentFrameScore[0]);
+// 		// 	$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 		// 	storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 		// } else if (currentValue < 10 && currentFrameScore[0] == 'X' && currentFrame) {
+// 		// 	previousScore = prev2Score + 20 + parseInt(currentFrameScore[1]);
+// 		// 	$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 		// 	storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 		// } else if (currentValue = '/' && (currentFrameScore[0] == 'X' || currentFrameScore[0] == '/') && (currentFrameScore[1] == 'X' || currentFrame[1] < 10)) {
+// 		// 	currentScore = previousScore + 20;
+// 		// 	$(`#frameScore${currentFrame} span`).text(currentScore);
+// 		// 	storeScoreChangeLocations(0, frame, turn, currentValue);
+// 		} else if (currentValue == '/' && currentTurn == 3) {
+// 			currentScore = previousScore + 20;
+// 			$(`#frameScore${currentFrame} span`).text(currentScore);
+// 			StoreScoreChangeLocations(0, frame, turn, currentValue);
+// 		} else if (currentValue < 10 && currentFrame != 10) {
+// 			currentScore = previousScore + parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]);
+// 			$(`#frameScore${currentFrame} span`).text(currentScore);
+// 			storeScoreChangeLocations(0, frame, turn, currentValue);
+// 		} else if (currentValue < 10 && currentTurn == 2 && currentFrameScore[0] !== 'X') {
+// 			previousScore = prev2Score + 10 + parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]);
+// 			$(`#frameScore${currentFrame -1 } span`).text(previousScore);
+// 			currentScore = previousScore + parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]);
+// 			$(`#frameScore${currentFrame} span`).text(currentScore);
+// 			storeScoreChangeLocations([-1, 0], frame, turn, currentValue);
+// 		} else if (currentValue < 10 && currentTurn == 2) {
+// 			previousScore = prev2Score + 20 + parseInt(currentFrameScore[1]);
+// 			$(`#frameScore${currentFrame -1 } span`).text(previousScore);
+// 			storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 		} else if (currentValue < 10 && currentTurn == 3) {
+// 			if (currentFrameScore[0] < 10) {
+// 				currentScore = previousScore + 10 + parseInt(currentValue);
+// 				$(`#frameScore${currentFrame} span`).text(currentScore);
+// 				storeScoreChangeLocations(0, frame, turn, currentValue);
+// 			} else if (currentFrameScore[0] == 'X' && currentFrameScore[1] == 'X') {
+// 				currentScore = previousScore + 20 + parseInt(currentValue);
+// 				$(`#frameScore${currentFrame} span`).text(currentScore);
+// 				storeScoreChangeLocations(0, frame, turn, currentValue);
+// 			} else if (currentFrameScore[0] == 'X' && currentFrameScore[1] < 10) {
+// 				currentScore = previousScore + 10 + parseInt(currentFrameScore[1]) + parseInt(currentValue);
+// 				$(`#frameScore${currentFrame} span`).text(currentScore);
+// 				storeScoreChangeLocations(0, frame, turn, currentValue);
+// 			}
+// 		}
+// 	} else if (currentTurn == 2 && currentFrame == 1) {
+// 		if (currentValue !== '/') {
+// 			currentScore = parseInt(currentFrameScore[0]) + parseInt(currentFrameScore[1]);
+// 			$(`#frameScore${currentFrame} span`).text(currentScore);
+// 			storeScoreChangeLocations(0, frame, turn, currentValue);
+// 		}
+// 	} else if (currentTurn == 1 && currentFrame !== 1) {
+// 		if (currentValue == 'X' && prev1FrameScore[1] == '/') {
+// 			if (currentFrame < 3) {
+// 				previousScore = 20;
+// 				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 				storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 			} else if (prev2FrameScore[0] == 'X') {
+// 				previousScore = prev2Score + 20;
+// 				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 				storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 			}
+// 		} else if (currentValue < 10 && prev1FrameScore[1] == '/') {
+// 			if (currentFrame > 2) {
+// 				previousScore = prev2Score + 10 + parseInt(currentValue);
+// 				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 				storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 			} else {
+// 				previousScore = 10 + parseInt(currentValue);
+// 				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 				storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 			}
 
-		} else if (currentValue == 'X' && prev1FrameScore[0] == 'X') {
-			if (currentFrame == 3 && prev2FrameScore[0] == 'X') {
-				previousScore = 30;
-				$(`#frameScore${currentFrame - 2} span`).text(previousScore);
-				storeScoreChangeLocations(-2, frame, turn, currentValue);
-			} else if (currentFrame > 3 && prev2FrameScore[0] == 'X') {
-				previousScore = 30 + prev3Score;
-				$(`#frameScore${currentFrame - 2} span`).text(previousScore);
-				storeScoreChangeLocations(-2, frame, turn, currentValue);
-			} 
-		} else if (currentValue < 10 && currentFrame > 2) {
-			if (prev1FrameScore[0] == 'X' && prev2FrameScore[0] == 'X') {
-				previousScore = prev3Score + 20 + parseInt(currentValue);
-				$(`#frameScore${currentFrame - 2} span`).text(previousScore);
-				storeScoreChangeLocations(-2, frame, turn, currentValue);
-			} else if (prev1FrameScore.length == 2 && prev1FrameScore[1] == '/') {
-				previousScore = prev2Score + 10 + parseInt(currentValue);
-				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
-				storeScoreChangeLocations(-1, frame, turn, currentValue);
-			}
-		}
-	}
-}
+// 		} else if (currentValue == 'X' && prev1FrameScore[0] == 'X') {
+// 			if (currentFrame == 3 && prev2FrameScore[0] == 'X') {
+// 				previousScore = 30;
+// 				$(`#frameScore${currentFrame - 2} span`).text(previousScore);
+// 				storeScoreChangeLocations(-2, frame, turn, currentValue);
+// 			} else if (currentFrame > 3 && prev2FrameScore[0] == 'X') {
+// 				previousScore = 30 + prev3Score;
+// 				$(`#frameScore${currentFrame - 2} span`).text(previousScore);
+// 				storeScoreChangeLocations(-2, frame, turn, currentValue);
+// 			} 
+// 		} else if (currentValue < 10 && currentFrame > 2) {
+// 			if (prev1FrameScore[0] == 'X' && prev2FrameScore[0] == 'X') {
+// 				previousScore = prev3Score + 20 + parseInt(currentValue);
+// 				$(`#frameScore${currentFrame - 2} span`).text(previousScore);
+// 				storeScoreChangeLocations(-2, frame, turn, currentValue);
+// 			} else if (prev1FrameScore.length == 2 && prev1FrameScore[1] == '/') {
+// 				previousScore = prev2Score + 10 + parseInt(currentValue);
+// 				$(`#frameScore${currentFrame - 1} span`).text(previousScore);
+// 				storeScoreChangeLocations(-1, frame, turn, currentValue);
+// 			}
+// 		}
+// 	}
+// }
 
-function addInputs() {
+// function addInputs() {
 
-}
+// }
 
-function deleteInputsScores(frame, turn, currentValue) {
-	const lastChange = scoreChanges.length - 1;
-	const framesChanged = scoreChanges[lastChange][0]; // maybe an array if multiple
-	const scoreFrame = scoreChanges[lastChange][1];
-	const scoreTurn = scoreChanges[lastChange][2];
-	const scoreValue = scoreChanges[lastChange][3];
+// function deleteInputsScores(frame, turn, currentValue) {
+// 	const lastChange = scoreChanges.length - 1;
+// 	const framesChanged = scoreChanges[lastChange][0]; // maybe an array if multiple
+// 	const scoreFrame = scoreChanges[lastChange][1];
+// 	const scoreTurn = scoreChanges[lastChange][2];
+// 	const scoreValue = scoreChanges[lastChange][3];
 
-	if (scoreChanges.length == 1 ) {
-		if (scoreFrame == frame && scoreTurn == turn) {
-			$(`#frameScore${scoreFrame + framesChanged} span`).text('');
-			scoreChanges.splice(lastChange, 1);
-		}
-	} else if (scoreChanges.length == 2) {
-		framesChanged.forEach(item => {
-			if (scoreFrame == frame && scoreTurn == turn) {
-				$(`#frameScore${scoreFrame + framesChanged} span`).text('');
+// 	if (scoreChanges.length == 1 ) {
+// 		if (scoreFrame == frame && scoreTurn == turn) {
+// 			$(`#frameScore${scoreFrame + framesChanged} span`).text('');
+// 			scoreChanges.splice(lastChange, 1);
+// 		}
+// 	} else if (scoreChanges.length == 2) {
+// 		framesChanged.forEach(item => {
+// 			if (scoreFrame == frame && scoreTurn == turn) {
+// 				$(`#frameScore${scoreFrame + framesChanged} span`).text('');
 
-			}
-		});
-		scoreChanges.splice(lastChange, 1);
-	}
-}
+// 			}
+// 		});
+// 		scoreChanges.splice(lastChange, 1);
+// 	}
+// }
 
-function handleNumberInputButtonsClick() {
-	$('.gameInput').on('click', '.inputButton', (event) => {
-		let value = $(event.currentTarget).text();
-		// store the scores into the scores array
-		if (typeof scores[currentFrame] == 'object' && value !== 'Back') {
-			scores[currentFrame].push(value);
-		} else if (value !== 'Back') {
-			scores[currentFrame] = [];
-			scores[currentFrame].push(value);
-		}
-		console.log(scores);
-		console.log({
-			process: 'START',
-			value: value,
-			currentFrame: currentFrame,
-			currentTurn: currentTurn
-		});
-		if (value == 'Back' && (currentTurn == 2 || currentTurn == 3 || currentTurn == 4)) {
-			currentTurn--;
-			returnSetScore(0, 0);
-			scores[currentFrame].splice(currentTurn, 1);
-			deleteInputsScores(currentFrame, currentTurn, value);
-			console.log({
-				process: `value == "Back" && (currentTurn == 2 || currentTurn == 3)`,
-				value: value,
-				currentFrame: currentFrame,
-				currentTurn: currentTurn,
-				scoreChanges: scoreChanges
-			});
-		} else if (value == 'Back' && currentTurn == 1 && returnSetScore(1, 0, 'skip') == 'X') {
-			console.log({
-				process: `value == 'Back' && currentTurn == 1 && returnSetScore(1, 0, 'skip') == 'X' ENTERED`
-			});
-				currentFrame--;
-				returnSetScore(0, 0);
-				scores[currentFrame].splice(currentTurn - 1, 1);
-				deleteInputsScores(currentFrame, currentTurn, value);
-				console.log({
-					process: `value == "Back" && currentTurn == 1 &&`,
-					value: value,
-					currentFrame: currentFrame,
-					currentTurn: currentTurn,
-					scoreChanges: scoreChanges
-				});
-		} else if (value == 'Back' && currentTurn == 1 && returnSetScore(1, 0, 'skip') < 10) {
-			console.log({
-				process: `value == 'Back' && currentTurn == 1 && returnSetScore(1, 0, 'skip') < 10 ENTERED`
-			});
-				currentFrame--;
-				currentTurn++;
-				returnSetScore(0, 0);
-				scores[currentFrame].splice(currentTurn - 1, 1);
-				deleteInputsScores(currentFrame, currentTurn, value);
-				value = returnSetScore(0, 1, 'skip');
-				console.log({
-					process: 'value == "Back" && currentTurn == 1 ELSE',
-					value: value,
-					currentFrame: currentFrame,
-					currentTurn: currentTurn,
-					scoreChanges: scoreChanges
-				});
-		} else if (currentTurn == 1 || currentTurn == 2 || currentTurn == 3) {
-			console.log({
-				process: `currentTurn == 1 || currentTurn == 2 ENTERED`
-			});
-			returnSetScore(0, 0, value);
-			// displayCurrentScore(value, currentFrame, currentTurn);
-			displayCurrentScore2(value, currentFrame, currentTurn);
-			processCurrentFrameTurn(value);
-		}
-		processNumberInputs(currentFrame, currentTurn, value, scores[currentFrame]);
-		console.log({
-			process: 'END',
-			value: value,
-			currentFrame: currentFrame,
-			currentTurn: currentTurn,
-			scoreChanges: scoreChanges
-		});
-	});
-}
+// function handleNumberInputButtonsClick() {
+// 	$('.gameInput').on('click', '.inputButton', (event) => {
+// 		let value = $(event.currentTarget).text();
+// 		// store the scores into the scores array
+// 		if (typeof scores[currentFrame] == 'object' && value !== 'Back') {
+// 			scores[currentFrame].push(value);
+// 		} else if (value !== 'Back') {
+// 			scores[currentFrame] = [];
+// 			scores[currentFrame].push(value);
+// 		}
+// 		console.log(scores);
+// 		console.log({
+// 			process: 'START',
+// 			value: value,
+// 			currentFrame: currentFrame,
+// 			currentTurn: currentTurn
+// 		});
+// 		if (value == 'Back' && (currentTurn == 2 || currentTurn == 3 || currentTurn == 4)) {
+// 			currentTurn--;
+// 			returnSetScore(0, 0);
+// 			scores[currentFrame].splice(currentTurn, 1);
+// 			deleteInputsScores(currentFrame, currentTurn, value);
+// 			console.log({
+// 				process: `value == "Back" && (currentTurn == 2 || currentTurn == 3)`,
+// 				value: value,
+// 				currentFrame: currentFrame,
+// 				currentTurn: currentTurn,
+// 				scoreChanges: scoreChanges
+// 			});
+// 		} else if (value == 'Back' && currentTurn == 1 && returnSetScore(1, 0, 'skip') == 'X') {
+// 			console.log({
+// 				process: `value == 'Back' && currentTurn == 1 && returnSetScore(1, 0, 'skip') == 'X' ENTERED`
+// 			});
+// 				currentFrame--;
+// 				returnSetScore(0, 0);
+// 				scores[currentFrame].splice(currentTurn - 1, 1);
+// 				deleteInputsScores(currentFrame, currentTurn, value);
+// 				console.log({
+// 					process: `value == "Back" && currentTurn == 1 &&`,
+// 					value: value,
+// 					currentFrame: currentFrame,
+// 					currentTurn: currentTurn,
+// 					scoreChanges: scoreChanges
+// 				});
+// 		} else if (value == 'Back' && currentTurn == 1 && returnSetScore(1, 0, 'skip') < 10) {
+// 			console.log({
+// 				process: `value == 'Back' && currentTurn == 1 && returnSetScore(1, 0, 'skip') < 10 ENTERED`
+// 			});
+// 				currentFrame--;
+// 				currentTurn++;
+// 				returnSetScore(0, 0);
+// 				scores[currentFrame].splice(currentTurn - 1, 1);
+// 				deleteInputsScores(currentFrame, currentTurn, value);
+// 				value = returnSetScore(0, 1, 'skip');
+// 				console.log({
+// 					process: 'value == "Back" && currentTurn == 1 ELSE',
+// 					value: value,
+// 					currentFrame: currentFrame,
+// 					currentTurn: currentTurn,
+// 					scoreChanges: scoreChanges
+// 				});
+// 		} else if (currentTurn == 1 || currentTurn == 2 || currentTurn == 3) {
+// 			console.log({
+// 				process: `currentTurn == 1 || currentTurn == 2 ENTERED`
+// 			});
+// 			returnSetScore(0, 0, value);
+// 			// displayCurrentScore(value, currentFrame, currentTurn);
+// 			displayCurrentScore2(value, currentFrame, currentTurn);
+// 			processCurrentFrameTurn(value);
+// 		}
+// 		processNumberInputs(currentFrame, currentTurn, value, scores[currentFrame]);
+// 		console.log({
+// 			process: 'END',
+// 			value: value,
+// 			currentFrame: currentFrame,
+// 			currentTurn: currentTurn,
+// 			scoreChanges: scoreChanges
+// 		});
+// 	});
+// }
 
 function mainHandler() {
 	processNumberInputs(currentFrame, currentTurn);
 	handleNumberInputButtonsClick2();
+	processSaveGameButton();
+	processClearGameButton();
 }
 
 
 // $(getNumberInputButtons);
 $(mainHandler);
+
+function finalizeGameData() {
+	// Should be processed during each turn in frame1.strike or whatever
+	// Need to clean up this code
+	// MOCK_POST_DATA.score = MOCK_POST_DATA.frame10.finalScore;
+	// let strikes, spares, openFrames;
+	// for (let i = 0; i < 10; i++) {
+	// 	let frame = `frame${i + 1}`;
+	// 	if (MOCK_POST_DATA[frame].score1)
+	// }
+
+}
+
+function processSaveGameButton() {
+	// Only show when all the scores have been inputed
+	// this function should attach an event handler to the save game button
+	// Once the button has been pressed then post the data to api endpoint
+	$('#saveGame').on('click', function(event) {
+		console.log('saveGame has been clicked');
+		event.preventDefault();
+		console.log(MOCK_POST_DATA);
+		
+		$.ajax({
+			url: '/api/games',
+			data: JSON.stringify(MOCK_POST_DATA),
+			contentType: 'application/json',
+			traditional: true,
+			type: 'post',
+			success: function(data) {
+				console.log(data);
+			},
+			error: function(data) {
+				console.warn(data.responseText);
+				console.log(data);
+			}
+		});
+	});
+	//on success redirect to gameList
+	// on error show the error on the screen
+}
+
+
+let newGame = {
+	"id": "333333",
+	"user": 0,
+	"score": 0,
+	"strikes": 0,
+	"spares": 0,
+	"openFrames": 0,
+};
+
+let newFrame = {"score1": 0,	"score2": 0, "finalScore": 0};
+let newTenthFrame = {"score1": 0, "score2": 0,	"score3": 0, "finalScore": 0};
+
+function processClearGameButton() {
+	$('#clearGame').on('click', function(event) {
+		
+		// reset the data
+		// clear scoreboard
+		MOCK_POST_DATA = Object.assign(newGame);
+
+		for (let i = 1; i < 11; i++) {
+			let currentFrame = 'frame' + i;
+			if (i == 10) {
+				MOCK_POST_DATA[currentFrame] = Object.assign({}, newTenthFrame);
+			} else {
+				MOCK_POST_DATA[currentFrame] = Object.assign({}, newFrame);
+			}
+
+			let frameInput = '#frameInput' + i;
+			let frameScore = '#frameScore' + i;
+			$(frameInput).find('span').text("");
+			$(frameScore).find('span').text("");
+		}
+
+		$('#strikesValue').text("0");
+		$('#sparesValue').text('0');
+		$('#openFramesValue').text('0');
+		$('#scoreValue').text('0');
+		$('#maxScoreValue').text('300');
+
+		currentFrame = 1;
+		currentTurn = 1;
+		scores = {};
+		currentScore = 0;
+		scoreChanges = [];
+
+		processNumberInputs(currentFrame, currentTurn);
+
+		console.log({
+			currentFrame: currentFrame,
+			currentTurn: currentTurn,
+			scores: scores,
+			currentScore: currentScore,
+			scoreChanges: scoreChanges
+		});
+		console.log(MOCK_POST_DATA);
+		console.log('clear game button has been clicked');
+	});
+
+}
+
+
+// Process the mock data
+// add strikes and spares and open frame data
+ // redirect on success
+ // get current game from ajax call
+
+
+ // dont need save game 
+ // new game should be save game
+ // save game should be new game
+ // need to copy bowling genius in doing the format
+ // 

@@ -87,3 +87,10 @@ find out what I need to do
 3. Game list page
 4. Game creation rendering
 5. css everything
+
+2-21-18
+1. Change the game model to reflect Mock Data
+2. Do not edit Mock Data
+3. Delete Code that isnt used in game.js (Clean Up);
+4. New Written data should reflect JSON Game 
+5. Clear Game overwrites everything. (reset)
