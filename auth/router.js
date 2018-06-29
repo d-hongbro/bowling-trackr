@@ -25,7 +25,7 @@ router.post('/login', localAuth, (req, res) => {
   req.session.user = user;
   console.log(req.session);
 // This should redirect the user to the game list
-  res.send({redirect: '/list'});
+   res.send({redirect: '/list'});
   // res.json({authToken, user});
 });
 

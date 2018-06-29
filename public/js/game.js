@@ -1275,7 +1275,7 @@ function processSaveGameButton() {
 			}
 		});
 	});
-	//on success redirect to gameList
+	// on success redirect to gameList
 	// on error show the error on the screen
 }
 
