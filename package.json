@@ -39,9 +39,12 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-as-promised": "^7.1.1",
     "chai-http": "^3.0.0",
     "faker": "^3.1.0",
     "mocha": "^3.2.0",
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.14.11",
+    "superagent": "^3.8.3",
+    "supertest": "^3.1.0"
   }
 }

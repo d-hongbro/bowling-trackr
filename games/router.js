@@ -194,6 +194,32 @@ router.post('/', ensureLogin.ensureLoggedIn('/login'), jsonParser, (req, res) =>
 
 });
 
+router.delete('/:id', ensureLogin.ensureLoggedIn('/login'), jsonParser, (req, res) => {
+  // Require the ID from the req.body
+  // Then check if the game exists in the db
+  // If it does not exist throw an error otherwise delete the game and return success message
+  const id = req.params.id;
+
+  // Need some type of error handling here.
+  // Need to brush up on mongo db methods.
+  Game.findByIdAndRemove(id)
+    .then(game => {
+      console.log(game);
+      const response = {
+        message: "Game was successfully deleted",
+        id: game._id
+      }
+      return res.status(200).send(response);
+    })
+    .catch(err => {
+      if (err.reason === 'ValidationError') {
+        return res.status(err.code).json(err);
+      }
+      res.status(500).json({code: 500, message: 'Internal server error'});
+    });
+});
+
+
 function calculateStats(id) {
     console.log(id);
     let avgScore, avgStrike, avgSpare, avgOpenFrame, maxScore, minScore, totalGames, maxStrike, minStrike, maxSpare, minSpare, maxOpenFrame, minOpenFrame;
