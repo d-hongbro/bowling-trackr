@@ -10,30 +10,45 @@ const mongoose = require('mongoose');
 
 // Grabs all the games pertaining to the user
 router.get('/', ensureLogin.ensureLoggedIn('/login'), (req, res) => {
+
+  // Problem how this is setup is that it is going through the user game list instead of game list...
+  // Need to find a way to just grab the game list from the db and match it with ID
+
+  // 2nd implementation - Need to test
   const id = req.session.user.id;
-  User.findById(id)
-    .then(user => {return user.apiRepr().games})
-    .then(userGameIds => {
-      let gameList = [];
-      console.log(userGameIds);
-      let promises = userGameIds.map(function(id) {
-        return new Promise(function(resolve, reject) {
-          Game.find(id)
-            .then(game => {
-              gameList.push(game[0]);
-              resolve();
-            });
-        });
+  Game.find({user: id})
+    .then(games => {
+      games.sort(function(a, b) {
+        return new Date(b.created) - new Date(a.created);
       });
-      Promise.all(promises)
-        .then(function() {
-          gameList.sort(function(a, b) {
-            return new Date(b.created) - new Date(a.created);
-          });
-          res.send(gameList);
-        })
-        .catch(console.error);
+      res.send(games);
     });
+
+
+  // const id = req.session.user.id;
+  // User.findById(id)
+  //   .then(user => {return user.apiRepr().games})
+  //   .then(userGameIds => {
+  //     let gameList = [];
+  //     console.log(userGameIds);
+  //     let promises = userGameIds.map(function(id) {
+  //       return new Promise(function(resolve, reject) {
+  //         Game.find(id)
+  //           .then(game => {
+  //             gameList.push(game[0]);
+  //             resolve();
+  //           });
+  //       });
+  //     });
+  //     Promise.all(promises)
+  //       .then(function() {
+  //         gameList.sort(function(a, b) {
+  //           return new Date(b.created) - new Date(a.created);
+  //         });
+  //         res.send(gameList);
+  //       })
+  //       .catch(console.error);
+  //   });
 });
 
 // Post to register a new game
@@ -199,6 +214,8 @@ router.delete('/:id', ensureLogin.ensureLoggedIn('/login'), jsonParser, (req, re
   // Then check if the game exists in the db
   // If it does not exist throw an error otherwise delete the game and return success message
   const id = req.params.id;
+
+  // Once the game has been deleted....
 
   // Need some type of error handling here.
   // Need to brush up on mongo db methods.

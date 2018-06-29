@@ -116,6 +116,9 @@ function gameHTMLCard(game, index) {
 	}
 	html += `	</tr>
 					</table>
+					<div class="gameFooter">
+						<span>${game._id}</span>
+					</div>
 				</div>
 			</div>`;
 	return html;
@@ -184,6 +187,8 @@ function gameHTMLCard(game, index) {
 // 		</div>
 // </div>
 }
+
+
 
 function displayGameList(data) {
 	console.log(data);
