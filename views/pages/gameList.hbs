@@ -4,34 +4,328 @@
   {{/inline}}
 
   {{#*inline "main-block"}}
-  <main class="align-middle">
+  <main>
   	<div class="container-fuild">
-  		<div id="gameResult">
-  			<h2>Game List</h2>
+
+        {{#> sidebar-block}}
+            {{!-- better to put the footer tag here --}}
+            {{> layouts/sidebar-user-stats}}
+        {{/sidebar-block}}
+
+  		<div id="gameResult" class="col-9">
+
+
+        <table id="gameList" class="gameList">
+            <tr class="header">
+                <th class="game-number">Game</th>
+                <th class="frame">1</th>
+                <th class="frame">2</th>
+                <th class="frame">3</th>
+                <th class="frame">4</th>
+                <th class="frame">5</th>
+                <th class="frame">6</th>
+                <th class="frame">7</th>
+                <th class="frame">8</th>
+                <th class="frame">9</th>
+                <th class="frame last-frame">10</th>
+                <th class="total">Total</th>
+                <th class="edit">Edit</th>
+                <th class="delete">Delete</th>
+            </tr>
+            {{!-- <tr class="game">
+                <td class="game-number">1</td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>9</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">
+                            <span>9</span>
+                        </div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">28</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>8</span>
+                            <span>1</span>
+                        </div> 
+                        <div class="frame-score">37</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>-</span>
+                            <span>/</span>
+                        </div> 
+                        <div class="frame-score">47</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>-</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">47</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>4</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">51</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>9</span>
+                            <span>/</span>
+                        </div> 
+                        <div class="frame-score">71</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">96</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">114</div>
+                    </div>
+                </td>
+                <td class="frame last-frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>5</span>
+                            <span>3</span>
+                        </div> 
+                        <div class="frame-score">122</div>
+                    </div>
+                </td>
+                <td class="total">122</td>
+                <td class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+            </tr>
+            <tr class="game">
+                <td class="game-number">2</td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>9</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">
+                            <span>9</span>
+                        </div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">28</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>8</span>
+                            <span>1</span>
+                        </div> 
+                        <div class="frame-score">37</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>-</span>
+                            <span>/</span>
+                        </div> 
+                        <div class="frame-score">47</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>-</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">47</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>4</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">51</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>9</span>
+                            <span>/</span>
+                        </div> 
+                        <div class="frame-score">71</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">101</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">131</div>
+                    </div>
+                </td>
+                <td class="frame last-frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                            <span>X</span>
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">161</div>
+                    </div>
+                </td>
+                <td class="total">161</td>
+                <td class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+            </tr>
+            <tr class="game">
+                <td class="game-number">3</td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>9</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">
+                            <span>9</span>
+                        </div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">28</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>8</span>
+                            <span>1</span>
+                        </div> 
+                        <div class="frame-score">37</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>-</span>
+                            <span>/</span>
+                        </div> 
+                        <div class="frame-score">47</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>-</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">47</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>4</span>
+                            <span>-</span>
+                        </div> 
+                        <div class="frame-score">51</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>9</span>
+                            <span>/</span>
+                        </div> 
+                        <div class="frame-score">71</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">99</div>
+                    </div>
+                </td>
+                <td class="frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>X</span>
+                        </div> 
+                        <div class="frame-score">119</div>
+                    </div>
+                </td>
+                <td class="frame last-frame">
+                    <div class="frame-container">
+                        <div class="input">
+                            <span>8</span>
+                            <span>/</span>
+                            <span>6</span>
+                        </div> 
+                        <div class="frame-score">135</div>
+                    </div>
+                </td>
+                <td class="total">135</td>
+                <td class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                <td class="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+            </tr> --}}
+        </table>
   		</div>
+
+
   	</div>
   </main>
-{{!-- 		<main>
-			<div class="row">
-				<div class="col-4">
-					<div id="sidebar">
-						<h2>Filter</h2>
-						<ul class="menu">
-							<li class="menu-item"><a href="#">Score</a><span class="fa fa-arrow-down"></span></li>
-							<li class="menu-item"><a href="#">Date</a></li>
-							<li class="menu-item"><a href="#">Strikes</a></li>
-							<li class="menu-item"><a href="#">Spares</a></li>
-							<li class="menu-item"><a href="#">Open Frames</a></li>
-						</ul>	
-					</div>
-				</div>
-				<div class="col-8">
-					<div id="gameResult">
-						<h2>Game List</h2>
-					</div>
-				</div>
-			</div>
-		</main> --}}
+
   {{/inline}}
 
   {{#*inline "scripts-block"}}

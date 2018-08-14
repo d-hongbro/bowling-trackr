@@ -1,0 +1,50 @@
+{{#> layouts/main title="Bowling Trackr"}}
+  {{#*inline "scripts-block"}}
+    
+  {{/inline}}
+
+  {{#*inline "main-block"}}
+  <main>
+  	<div class="container-fuild">
+
+        {{#> sidebar-block}}
+            {{!-- better to put the footer tag here --}}
+            {{> layouts/sidebar-user-stats}}
+        {{/sidebar-block}}
+
+  		<div id="gameResult" class="col-9">
+  			<h2>Game List</h2>
+  		</div>
+  	</div>
+  </main>
+{{!-- 		<main>
+			<div class="row">
+				<div class="col-4">
+					<div id="sidebar">
+						<h2>Filter</h2>
+						<ul class="menu">
+							<li class="menu-item"><a href="#">Score</a><span class="fa fa-arrow-down"></span></li>
+							<li class="menu-item"><a href="#">Date</a></li>
+							<li class="menu-item"><a href="#">Strikes</a></li>
+							<li class="menu-item"><a href="#">Spares</a></li>
+							<li class="menu-item"><a href="#">Open Frames</a></li>
+						</ul>	
+					</div>
+				</div>
+				<div class="col-8">
+					<div id="gameResult">
+						<h2>Game List</h2>
+					</div>
+				</div>
+			</div>
+		</main> --}}
+  {{/inline}}
+
+  {{#*inline "scripts-block"}}
+    {{! this is where I need to enter the script for the login !}}
+    <script type="text/javascript" src="js/gameList-old.js"></script>
+  {{/inline}}
+
+
+{{/layouts/main}}
+

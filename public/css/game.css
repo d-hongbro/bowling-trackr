@@ -1,0 +1,57 @@
+/* Doing a table format to display the scores instead of showing each single game */
+
+table.gameList, table.gameList th, table.gameList td {padding: 0; margin: 0;}
+
+table.gameList {
+    border: none;
+    text-align: center;
+    width: 100%;
+}
+
+table.gameList .header, table.gameList .game {
+    text-align: center;
+    color: black;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+table.gameList .header {font-size: 24px; background: rgba(255, 255, 255, 0.4);}
+table.gameList .game:nth-of-type(odd) {background: rgba(255, 255, 255, 0.1);}
+
+table.gameList th {
+    font-weight: 700;
+}
+
+table.gameList th, table.gameList td {
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table.gameList .game-number {width: 10%;}
+table.gameList .frame {width: 6%;}
+table.gameList .last-frame{width: 10%;}
+table.gameList .total {width: 10%;}
+table.gameList .edit, table.gameList .delete {width: 8%}
+
+table.gameList .game .game-number {justify-content: center; align-items: center;}
+
+/* Game Table FONT */
+table.gameList .game .frame .frame-container .input {font-size: 1.2em; font-weight: 400;}
+table.gameList .game .frame .frame-container .frame-score {font-size: 1.6em; font-weight: 400; font-style: italic;}
+table.gameList .game .total {font-size: 1.8em; font-weight: 400; font-style: italic;}
+table.gameList .game .game-number {font-size: 1.8em; font-weight: 400;}
+
+/* Game Table Button */
+table.gameList i {font-size: 2em;}
+
+/* 
+
+1. Integrate on gameListV2.js
+2. Integrate on gameV2.js
+3. Clear up old table code
+4. Mobile ready table formatting
+
+*/
