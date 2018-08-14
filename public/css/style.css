@@ -64,10 +64,10 @@ header {
 }
 
 main {
-	margin: 0 auto;
-	text-align: center;
+	/* text-align: center;
 	position: relative;
-	top: 3.8em;
+	top: 3.8em; */
+	width: 100%;
 }
 
 #gameResult {
@@ -102,61 +102,6 @@ table {
 	border-collapse: collapse;
 }
 
-#sidebar {
-	position: fixed;
-	top: 3.8em;
-}
-
-#sidebar .fixed {
-  position: fixed;
-  top: 0;
-}
-
-#sidebar .bottom {
-  position: absolute;
-  bottom: 0;
-  top: auto;
-}
-
-#sidebar .menu {
-  list-style-type: none;
-  margin: 0;
-}
-
-#sidebar .menu-item {
-	position: relative;
-	margin: 1em 0;
-}
-
-#sidebar .menu-item:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  background-color: #5dbaff;
-  transition: width .3s ease-out;
-  border-left: 1px solid #5dbaff;
-}
-
-#sidebar .menu-item:hover:before {
-	width: 100%;
-}
-
-#sidebar .menu-item a {
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-  padding: 1em 3em;
-  text-align: left;
-}
-
-#sidebar .menu-item span {
-	text-decoration: none;
-	display: inline-block;
-	position: relative;
-}
 
 .gameCard {
 	border: 1px solid #c1c1c1;
@@ -391,3 +336,75 @@ dark: FD534C;
 FCBE4D
 
 */
+
+/* SIDEBAR Styles */
+
+/* HEADER */
+#sidebar {color: black;}
+#sidebar hr {width: 80%; margin: 0 auto;}
+#sidebar header {
+	padding: 0; 
+	background: rgba(255, 255, 255, 0.4);
+}
+#sidebar .greet {padding: 1em 1.5em 0 1.5em;}
+#sidebar header .name {
+	font-size: 1.8em;
+	text-align: center;
+}
+#sidebar header .message {
+	text-align: center;
+	font-size: 1.2em;
+	margin: 0;
+}
+#sidebar header .overview {
+	display: flex;
+	/* padding-right: 1em; */
+}
+#sidebar header .number {
+	font-weight: 600;
+	font-size: 1.2em;
+	margin: 0;
+}
+#sidebar header .title {
+	font-weight: 400;
+	font-size: 0.8em;
+}
+
+/* STATS */
+#sidebar .stats .hidden {display: none !important;}
+#sidebar .stats ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#sidebar .stats li {
+	padding: 0.7em 0 0.7em 2em;
+	background: rgba(255, 255, 255, 0.2);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	font-weight: 400;
+	cursor: pointer;
+}
+#sidebar .stats li:last-of-type {
+	border: none;
+}
+#sidebar .stats .content {
+	display: flex;
+	padding: 0.7em 0 1.5em 0;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.1);
+}
+#sidebar .stats .content p {
+	padding: 0;
+	margin: 0;
+}
+#sidebar .stats .content .number {
+	font-weight: 600;
+	font-size: 1.2em;
+	margin: 0;
+}
+#sidebar .stats .content .title {
+	font-weight: 400;
+	font-size: 0.8em;
+}
+
+/* Media query break points for sidebar and table */

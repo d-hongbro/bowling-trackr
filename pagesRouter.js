@@ -35,6 +35,12 @@ router.get('/list', ensureLogin.ensureLoggedIn('/'), function(req, res) {
   // res.status(200);
 });
 
+
+router.get('/list2', ensureLogin.ensureLoggedIn('/'), function(req, res) {
+  console.log(req.user);
+  res.render('pages/gameList-old', { title: 'Game List Old', login: true});
+});
+
 router.get('/game', ensureLogin.ensureLoggedIn('/'),function(req, res) {
   res.render('pages/game', { title: 'New Game', login: true});
 });
