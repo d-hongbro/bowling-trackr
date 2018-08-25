@@ -21,6 +21,7 @@ const GameSchema = mongoose.Schema({
   spares: Number,
   openFrames: Number,
   created: { type: Date, default: Date.now },
+  updated: { type: Date, default: Date.now }
 });
 
 GameSchema.methods.apiRepr = function() {

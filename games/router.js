@@ -8,7 +8,184 @@ const jsonParser = bodyParser.json();
 const mongoose = require('mongoose');
 
 
+// Put method for editing an existing game record
+// This needs to be tested by the game js file
+router.put('/', ensureLogin.ensureLoggedIn('/login'), (req, res) => {
+  // I need to make sure that the user is the author of the game before editing the game
+  // That way they cannot change the records of games from other users.
+
+  // This method will be similar to the create method
+  // 1. Check author
+  // 2. Check fields
+  // 3. Update Records
+  const id = req.session.user.id;
+  const gameId = req.body.id;
+
+  // Checking the author
+  Game.findById(gameId)
+    .then(game => {
+      if (game.user !== id) {
+        return res.status(401);
+      }
+    });
+
+  // Checking the fields
+  console.log(req.body);
+  const requiredFields = ['frame1', 'frame2', 'frame3', 
+                          'frame4', 'frame5', 'frame6', 'frame7', 'frame8', 
+                          'frame9', 'frame10', 'score', 'strikes', 'spares', 'openFrames'];
+  const missingField = requiredFields.find(field => !(field in req.body));
+
+  if (missingField) {
+    return res.status(422).json({
+      code: 422,
+      reason: 'ValidationError',
+      message: 'Missing field',
+      location: missingField
+    });
+  }
+  console.log('pass 1');
+  // check frame1-frame10
+  const requiredFrameFields = ['score1', 'score2', 'finalScore', 'strike', 'spare'];
+  const missingFrameField = requiredFrameFields.find((field) => {
+    for (let property in req.body) {
+      if (property.includes('frame')) {
+        !(field in req.body[property]);
+      }
+    }
+  });
+
+  if (missingFrameField) {
+    return res.status(422).json({
+      code: 422,
+      reason: 'ValidationError',
+      message: 'Missing field',
+      location: missingFrameField
+    });
+  }
+  console.log('pass 2');
+  // check for frame10 score3
+  const requiredFrameTenFields = ['score3'];
+  const missingFrameTenField = requiredFrameTenFields.find((field) => {
+    for (let property in req.body) {
+      if (property.includes('frame10')) {
+        !(field in req.body[property]);
+      }
+    }
+  });
+
+  if (missingFrameTenField) {
+    return res.status(422).json({
+      code: 422,
+      reason: 'ValidationError',
+      message: 'Missing field',
+      location: missingFrameTenField
+    });
+  }
+  console.log('pass 3');
+  // Then need to check if they are all numbers
+  const numberFields = ['score', 'strikes', 'spares', 'openFrames'];
+  const nonNumberField = numberFields.find(
+    field => field in req.body && typeof req.body[field] !== 'number'
+  );
+
+  if (nonNumberField) {
+    return res.status(422).json({
+      code: 422,
+      reason: 'ValidationError',
+      message: 'Incorrect field type: expected string',
+      location: nonNumberField
+    });
+  }
+  console.log('pass 4');
+  // check if all the frames are numbers
+  const numberFrameFields = ['score1', 'score2', 'finalScore', 'strike', 'spare'];
+  const nonNumberFrameField = numberFrameFields.find(field => {
+    for (let property in req.body) {
+      if (property.includes('frame')) {
+        field in req.body[property] && typeof req.body[property].field !== 'number'
+      }
+    }
+  });
+
+  if (nonNumberFrameField) {
+    return res.status(422).json({
+      code: 422,
+      reason: 'ValidationError',
+      message: 'Incorrect field type: expected string',
+      location: nonNumberFrameField
+    });
+  }
+
+  const numberFrameTenFields = ['score3'];
+  const nonNumberFrameTenField = numberFrameTenFields.find(field => {
+    for (let property in req.body) {
+      if (property.includes('frame10')) {
+        field in req.body[property] && typeof req.body[property].field !== 'number'
+      }
+    }
+  });
+
+  if (nonNumberFrameTenField) {
+    return res.status(422).json({
+      code: 422,
+      reason: 'ValidationError',
+      message: 'Incorrect field type: expected string',
+      location: nonNumberFrameTenField
+    });
+  }
+
+  let {frame1, frame2, frame3, frame4, frame5, 
+        frame6, frame7, frame8, frame9, frame10, 
+        score, strikes, spares, openFrames} = req.body;
+  // Check current Game number from the user.
+  // Dont need to access user to et id
+  // it is in req.session already....
+  console.log({score: score, strikes: strikes, spares: spares, openFrames: openFrames});
+  const username = req.session.username;
+
+
+
+  // Grab the id of the user requesting
+  
+  const date = new Date();
+  // Find the game id
+  Game.findByIdAndUpdate(
+    gameId,
+    {
+      user: mongoose.Types.ObjectId(req.session.user.id),
+      frame1,
+      frame2,
+      frame3,
+      frame4,
+      frame5,
+      frame6,
+      frame7,
+      frame8,
+      frame9,
+      frame10,
+      score,
+      strikes,
+      spares,
+      openFrames,
+      updated: date
+    }
+  )
+    .then(game => {
+      // This is the game that is returned if it is successful
+      return res.status(200).json(game.apiRepr());
+    })
+    .catch(err => {
+      if (err.reason === 'ValidationError') {
+        return res.status(err.code).json(err);
+      }
+      res.status(500).json({code: 500, message: 'Internal server error'});
+    });
+});
+
+
 // Grabs all the games pertaining to the user
+// Also has to take into consideration the game id look up
 router.get('/', ensureLogin.ensureLoggedIn('/login'), (req, res) => {
 
   // Problem how this is setup is that it is going through the user game list instead of game list...
