@@ -169,7 +169,8 @@ router.put('/', ensureLogin.ensureLoggedIn('/login'), (req, res) => {
       spares,
       openFrames,
       updated: date
-    }
+    },
+    {new: true}
   )
     .then(game => {
       // This is the game that is returned if it is successful
